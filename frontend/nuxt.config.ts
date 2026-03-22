@@ -82,6 +82,13 @@ export default defineNuxtConfig({
     },
   },
 
+  // Allow build to succeed without Sanity data (prerendered pages may fail)
+  nitro: {
+    prerender: {
+      failOnError: false,
+    },
+  },
+
   devtools: { enabled: true },
   compatibilityDate: "2024-04-03",
 });
