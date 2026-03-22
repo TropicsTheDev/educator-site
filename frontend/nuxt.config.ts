@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 
   // Sanity CMS
   sanity: {
-    projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID || "",
+    projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NUXT_PUBLIC_SANITY_DATASET || "production",
     apiVersion: "2026-03-01",
   },
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   // Nuxt Image — Sanity provider for responsive images
   image: {
     sanity: {
-      projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID || "",
+      projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID as string,
       dataset: process.env.NUXT_PUBLIC_SANITY_DATASET || "production",
     },
   },
