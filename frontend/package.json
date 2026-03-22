@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/image": "^2.0.0",
+    "@nuxtjs/sanity": "^2.2.0",
+    "@nuxtjs/seo": "^4.0.2",
+    "@primevue/nuxt-module": "^4.5.4",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.2",
+    "nuxt": "^4.4.2",
+    "primevue": "^4.5.4",
+    "tailwindcss": "^4.2.2",
+    "tailwindcss-primeui": "^0.6.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@nuxt/fonts": "^0.14.0"
+  }
+}
