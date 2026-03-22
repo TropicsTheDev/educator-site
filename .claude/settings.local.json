@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_compound-engineering_context7__resolve-library-id",
+      "WebSearch",
+      "mcp__plugin_compound-engineering_context7__query-docs",
+      "WebFetch(domain:tailwind.primevue.org)",
+      "WebFetch(domain:volt.primevue.org)",
+      "WebFetch(domain:nuxtseo.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:help.calendly.com)",
+      "WebFetch(domain:community.calendly.com)",
+      "WebFetch(domain:resend.com)",
+      "WebFetch(domain:image.nuxt.com)",
+      "WebFetch(domain:sanity.nuxtjs.org)",
+      "WebFetch(domain:nuxt.com)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:primevue.org)",
+      "Read(//private/tmp/**)",
+      "Bash(npm view:*)",
+      "Bash(cd /Users/dmtownsend/Documents/Code Projects/educator-site/frontend)",
+      "Bash(npx nuxt:*)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://localhost:3099/nonexistent)",
+      "Bash(curl -s -X POST http://localhost:3099/api/contact -H \"Content-Type: application/json\" -d '{\"\"\"\"name\"\"\"\":\"\"\"\"\"\"\"\",\"\"\"\"email\"\"\"\":\"\"\"\"bad\"\"\"\",\"\"\"\"message\"\"\"\":\"\"\"\"short\"\"\"\"}')"
+    ]
+  }
+}
