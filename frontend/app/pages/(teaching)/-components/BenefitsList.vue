@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <section class="py-16 bg-surface-light">
     <div class="max-w-4xl mx-auto px-4">
-      <SectionHeading title="Benefits" />
+      <UiSectionHeading title="Benefits" />
       <ul class="grid gap-4 md:grid-cols-2 mt-8">
         <li
           v-for="(benefit, index) in benefits"

@@ -77,7 +77,7 @@ function formatDate(date: string) {
       </div>
 
       <!-- Discipline CTA -->
-      <DisciplineCTA v-if="discipline" :discipline="discipline" />
+      <UiDisciplineCTA v-if="discipline" :discipline="discipline" />
 
       <!-- Related Posts -->
       <RelatedPosts :posts="article.relatedPosts || []" />

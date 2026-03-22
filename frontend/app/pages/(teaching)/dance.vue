@@ -54,11 +54,11 @@ useSeoFromSanity(computed(() => page.value ? { ...page.value.seo, title: page.va
     <!-- CTA -->
     <section v-if="calendlyUrl" class="py-16 bg-surface-light">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <SectionHeading title="Ready to Dance?" />
+        <UiSectionHeading title="Ready to Dance?" />
         <p class="text-text-secondary mb-8">
           Book a session and discover the art of Kizomba.
         </p>
-        <CalendlyButton :url="calendlyUrl" text="Book a Dance Session" />
+        <UiCalendlyButton :url="calendlyUrl" text="Book a Dance Session" />
       </div>
     </section>
   </div>

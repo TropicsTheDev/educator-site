@@ -17,7 +17,7 @@ function formatDate(dateString: unknown): string {
 <template>
   <section v-if="props.events.length" class="py-16 bg-surface-light">
     <div class="max-w-4xl mx-auto px-4">
-      <SectionHeading title="Upcoming Events" />
+      <UiSectionHeading title="Upcoming Events" />
       <div class="grid gap-6 mt-8">
         <article
           v-for="event in props.events"

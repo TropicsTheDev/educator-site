@@ -48,7 +48,7 @@ useSeoMeta({
     <!-- Discipline Features -->
     <section class="py-20 bg-surface-light">
       <div class="max-w-6xl mx-auto px-4">
-        <SectionHeading
+        <UiSectionHeading
           title="Two Disciplines, One Framework"
           subtitle="Perceptual Control Theory brings clarity to every practice."
           centered
@@ -94,13 +94,13 @@ useSeoMeta({
     <!-- Testimonials -->
     <section v-if="testimonials?.length" class="py-20">
       <div class="max-w-6xl mx-auto px-4">
-        <SectionHeading
+        <UiSectionHeading
           title="What Students Say"
           subtitle="Hear from practitioners who have transformed their approach."
           centered
         />
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <TestimonialCard
+          <UiTestimonialCard
             v-for="testimonial in testimonials"
             :key="testimonial._id"
             :student-name="testimonial.studentName"
@@ -115,7 +115,7 @@ useSeoMeta({
     <!-- Recent Blog Posts -->
     <section v-if="recentPosts?.length" class="py-20 bg-surface-light">
       <div class="max-w-6xl mx-auto px-4">
-        <SectionHeading
+        <UiSectionHeading
           title="Recent Articles"
           subtitle="Insights on coaching, movement, and Perceptual Control Theory."
           centered

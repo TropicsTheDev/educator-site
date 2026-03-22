@@ -22,13 +22,13 @@ useSeoMeta({
       <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-12">
         <!-- Contact Form -->
         <div>
-          <SectionHeading title="Send a Message" />
+          <UiSectionHeading title="Send a Message" />
           <ContactForm />
         </div>
 
         <!-- Contact Info -->
         <div>
-          <SectionHeading title="Contact Info" />
+          <UiSectionHeading title="Contact Info" />
           <div class="space-y-6">
             <div v-if="settings?.email">
               <h3 class="font-semibold text-text-primary mb-1">Email</h3>

@@ -34,7 +34,7 @@ useSchemaOrg([
     <!-- Bio -->
     <section class="py-16">
       <div class="max-w-4xl mx-auto px-4">
-        <SectionHeading title="Bio" />
+        <UiSectionHeading title="Bio" />
         <div v-if="aboutData?.bio" class="prose prose-lg max-w-none text-text-secondary">
           <SanityContent :value="aboutData.bio" />
         </div>
@@ -44,7 +44,7 @@ useSchemaOrg([
     <!-- Methodology -->
     <section v-if="aboutData?.methodologyDescription" class="py-16 bg-surface-light">
       <div class="max-w-4xl mx-auto px-4">
-        <SectionHeading title="Methodology" />
+        <UiSectionHeading title="Methodology" />
         <div class="prose prose-lg max-w-none text-text-secondary">
           <SanityContent :value="aboutData.methodologyDescription" />
         </div>
@@ -54,7 +54,7 @@ useSchemaOrg([
     <!-- Credentials -->
     <section v-if="aboutData?.credentials?.length" class="py-16">
       <div class="max-w-4xl mx-auto px-4">
-        <SectionHeading title="Credentials" />
+        <UiSectionHeading title="Credentials" />
         <ul class="space-y-4">
           <li
             v-for="(credential, index) in aboutData.credentials"

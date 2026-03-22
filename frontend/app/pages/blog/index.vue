@@ -25,7 +25,7 @@ useSeoMeta({
 <template>
   <div class="py-16">
     <div class="max-w-4xl mx-auto px-4">
-      <SectionHeading title="Blog" centered />
+      <UiSectionHeading title="Blog" centered />
 
       <CategoryFilter
         v-if="categories?.length"
