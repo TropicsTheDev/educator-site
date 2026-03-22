@@ -14,10 +14,10 @@ useSchemaOrg([
 
 <template>
   <div class="min-h-screen flex flex-col bg-surface-light text-text-primary">
-    <GlobalAppHeader :settings="settings" />
+    <AppHeader :settings="settings" />
     <main class="flex-1">
       <slot />
     </main>
-    <GlobalAppFooter :settings="settings" />
+    <AppFooter :settings="settings" />
   </div>
 </template>
