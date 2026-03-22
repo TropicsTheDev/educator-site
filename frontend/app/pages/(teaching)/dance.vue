@@ -1,0 +1,65 @@
+<script setup lang="ts">
+import MethodologySection from './-components/MethodologySection.vue'
+import BenefitsList from './-components/BenefitsList.vue'
+import DisciplineTestimonials from './-components/DisciplineTestimonials.vue'
+import UpcomingEvents from './-components/UpcomingEvents.vue'
+import { teachingPageQuery } from '~/queries/teaching.queries'
+
+const discipline = 'kiz'
+
+const { data } = useSanityQuery(teachingPageQuery, { discipline })
+const { data: settings } = useSiteSettings()
+
+const page = computed(() => data.value?.page)
+const testimonials = computed(() => data.value?.testimonials || [])
+const events = computed(() => data.value?.events || [])
+
+const calendlyUrl = computed(() => settings.value?.calendlyKizUrl)
+
+useSeoFromSanity(computed(() => page.value ? { ...page.value.seo, title: page.value.title } : null))
+</script>
+
+<template>
+  <div>
+    <!-- Hero -->
+    <section class="relative bg-royal-orange py-20 text-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {{ page?.title || 'Kizomba Dance' }}
+        </h1>
+        <p v-if="page?.subtitle" class="text-xl text-white/80">
+          {{ page.subtitle }}
+        </p>
+      </div>
+      <img
+        v-if="page?.heroImage"
+        :src="page.heroImage"
+        :alt="page?.title || 'Kizomba Dance'"
+        class="absolute inset-0 w-full h-full object-cover opacity-20"
+      />
+    </section>
+
+    <!-- Methodology -->
+    <MethodologySection v-if="page?.methodology" :methodology="page.methodology" />
+
+    <!-- Benefits -->
+    <BenefitsList v-if="page?.benefits?.length" :benefits="page.benefits" />
+
+    <!-- Testimonials -->
+    <DisciplineTestimonials :testimonials="testimonials" />
+
+    <!-- Upcoming Events -->
+    <UpcomingEvents :events="events" />
+
+    <!-- CTA -->
+    <section v-if="calendlyUrl" class="py-16 bg-surface-light">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <SectionHeading title="Ready to Dance?" />
+        <p class="text-text-secondary mb-8">
+          Book a session and discover the art of Kizomba.
+        </p>
+        <CalendlyButton :url="calendlyUrl" text="Book a Dance Session" />
+      </div>
+    </section>
+  </div>
+</template>
