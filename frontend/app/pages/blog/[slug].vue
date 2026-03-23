@@ -4,12 +4,12 @@ import { articleDetailQuery } from '~/queries/article.queries'
 
 const route = useRoute()
 
-const { data } = useSanityQuery(articleDetailQuery, { slug: route.params.slug })
+const { data, status } = useSanityQuery(articleDetailQuery, { slug: route.params.slug })
 
 const article = computed(() => data.value)
 
-watch(article, (val) => {
-  if (val === null) {
+watch([article, status], ([val, s]) => {
+  if (s === 'success' && !val) {
     throw createError({ statusCode: 404, statusMessage: 'Article not found' })
   }
 }, { immediate: true })
