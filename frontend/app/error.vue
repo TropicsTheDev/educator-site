@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Compass } from '@boxicons/vue'
+
 const error = useError()
 const is404 = computed(() => error.value?.statusCode === 404)
 </script>
@@ -7,6 +9,7 @@ const is404 = computed(() => error.value?.statusCode === 404)
   <div class="min-h-screen flex flex-col bg-surface-base text-text-on-dark">
     <div class="flex-1 flex items-center justify-center px-4">
       <div class="text-center max-w-lg">
+        <Compass class="w-12 h-12 mx-auto mb-4 text-royal-gold/60" />
         <p class="text-royal-gold text-6xl font-bold mb-4">
           {{ error?.statusCode || 500 }}
         </p>

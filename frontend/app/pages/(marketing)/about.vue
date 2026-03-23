@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Medal, Brain } from '@boxicons/vue'
 import { aboutPageQuery } from '~/queries/site.queries'
 
 const { data: aboutData } = useSanityQuery(aboutPageQuery)
@@ -44,7 +45,9 @@ useSchemaOrg([
     <!-- Methodology -->
     <section v-if="aboutData?.methodologyDescription" class="py-16 bg-surface-raised/30">
       <div class="max-w-4xl mx-auto px-4">
-        <UiSectionHeading title="Methodology" />
+        <UiSectionHeading title="Methodology">
+          <template #icon><Brain class="w-6 h-6 text-royal-purple" /></template>
+        </UiSectionHeading>
         <div class="prose prose-lg max-w-none text-text-on-dark-muted">
           <SanityContent :value="aboutData.methodologyDescription" />
         </div>
@@ -54,7 +57,9 @@ useSchemaOrg([
     <!-- Credentials -->
     <section v-if="aboutData?.credentials?.length" class="py-16">
       <div class="max-w-4xl mx-auto px-4">
-        <UiSectionHeading title="Credentials" />
+        <UiSectionHeading title="Credentials">
+          <template #icon><Medal class="w-6 h-6 text-royal-gold" /></template>
+        </UiSectionHeading>
         <ul class="space-y-4">
           <li
             v-for="(credential, index) in aboutData.credentials"

@@ -2,6 +2,7 @@
 import DisciplineTestimonials from './-components/DisciplineTestimonials.vue'
 import IrmCycle from './-components/IrmCycle.vue'
 import ComparisonList from './-components/ComparisonList.vue'
+import { MapIcon, Gem, Gift, UserPlus, Calendar, Hand } from '@boxicons/vue'
 import { teachingTestimonialsQuery } from '~/queries/teaching.queries'
 
 const { data: testimonials } = useSanityQuery(teachingTestimonialsQuery, { discipline: 'kiz' })
@@ -66,8 +67,12 @@ useSeoMeta({
 
     <!-- Bridge -->
     <div class="max-w-2xl mx-auto px-4 py-10 text-center">
+      <!-- Open hands icon -->
+      <Hand class="w-10 h-10 mx-auto mb-5 text-royal-orange/40" />
+
       <p class="text-text-on-dark-muted leading-relaxed">
-        You're not alone — and more important, there's nothing wrong with you. Traditional dance
+        <span class="text-text-on-dark font-medium">You're not alone</span>
+        — and more important, there's nothing wrong with you. Traditional dance
         classes often teach patterns, not presence. They give you sequences to memorize, but not the
         perceptual skills to adapt in real time. My coaching takes a different path.
       </p>
@@ -131,22 +136,27 @@ useSeoMeta({
         <UiSectionHeading title="Practical Details" />
         <div class="space-y-4">
           <div class="flex items-start gap-3">
+            <MapIcon class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Location</span>
             <p class="text-text-on-dark-muted">[Studio name/venue] <span class="text-sm italic">(Additional charges may apply if the venue has a rental fee)</span></p>
           </div>
           <div class="flex items-start gap-3">
+            <Gem class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Pricing</span>
             <p class="text-text-on-dark-muted">$45/hour via Venmo, CashApp, Zelle, or cash</p>
           </div>
           <div class="flex items-start gap-3">
+            <Gift class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Referral&nbsp;Discount</span>
             <p class="text-text-on-dark-muted">Refer a student, and you'll get $10 off your next session.</p>
           </div>
           <div class="flex items-start gap-3">
+            <UserPlus class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Group&nbsp;Sessions</span>
             <p class="text-text-on-dark-muted">Bring up to 3 friends and split the session! Perfect for couples or practice groups. <span class="text-sm italic">(Only one referral discount can be applied per session.)</span></p>
           </div>
           <div class="flex items-start gap-3">
+            <Calendar class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Availability</span>
             <p class="text-text-on-dark-muted">My calendar reflects the next 7 days. New slots open weekly.</p>
           </div>

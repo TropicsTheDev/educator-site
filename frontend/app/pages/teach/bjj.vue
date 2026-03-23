@@ -2,6 +2,7 @@
 import DisciplineTestimonials from './-components/DisciplineTestimonials.vue'
 import IrmCycle from './-components/IrmCycle.vue'
 import ComparisonList from './-components/ComparisonList.vue'
+import { MapIcon, Gem, Gift, UserPlus, Calendar, Hand } from '@boxicons/vue'
 import { teachingTestimonialsQuery } from '~/queries/teaching.queries'
 
 const { data: testimonials } = useSanityQuery(teachingTestimonialsQuery, { discipline: 'bjj' })
@@ -65,10 +66,14 @@ useSeoMeta({
 
     <!-- Bridge -->
     <div class="max-w-2xl mx-auto px-4 py-10 text-center">
+      <!-- Open hands icon -->
+      <Hand class="w-10 h-10 mx-auto mb-5 text-royal-green/40" />
+
       <p class="text-text-on-dark-muted leading-relaxed">
-        You're not alone — and more important, you're not broken. Traditional Jiu-Jitsu teaching
-        often leaves you collecting moves instead of developing real, adaptable skill. My coaching
-        takes a different path.
+        <span class="text-text-on-dark font-medium">You're not alone</span>
+        — and more important, you're not broken. Traditional Jiu-Jitsu teaching
+        often leaves you collecting moves instead of developing real, adaptable skill.
+        My coaching takes a different path.
       </p>
     </div>
 
@@ -131,22 +136,27 @@ useSeoMeta({
         <UiSectionHeading title="Practical Details" />
         <div class="space-y-4">
           <div class="flex items-start gap-3">
+            <MapIcon class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Location</span>
             <p class="text-text-on-dark-muted">[Your gym/venue name] <span class="text-sm italic">(Additional charges apply if the venue charges a mat fee)</span></p>
           </div>
           <div class="flex items-start gap-3">
+            <Gem class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Pricing</span>
             <p class="text-text-on-dark-muted">$45/hour via Venmo, CashApp, Zelle, or cash</p>
           </div>
           <div class="flex items-start gap-3">
+            <Gift class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Referral&nbsp;Discount</span>
             <p class="text-text-on-dark-muted">Refer a student, and you'll get $10 off your next session.</p>
           </div>
           <div class="flex items-start gap-3">
+            <UserPlus class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Group&nbsp;Sessions</span>
             <p class="text-text-on-dark-muted">Bring up to 3 friends and split the session! <span class="text-sm italic">(Only one referral discount can be applied per session.)</span></p>
           </div>
           <div class="flex items-start gap-3">
+            <Calendar class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Availability</span>
             <p class="text-text-on-dark-muted">My calendar reflects the next 7 days. New slots open weekly.</p>
           </div>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Shield, Music, BookOpen } from "@boxicons/vue";
 import { homePageQuery } from "~/queries/site.queries";
 
 const { data } = useSanityQuery(homePageQuery);
@@ -118,6 +119,7 @@ useSeoMeta({
             to="/teach/bjj"
             class="bg-surface-raised rounded-xl p-8 border border-royal-green/15 hover:border-royal-green/30 transition-all duration-300 group"
           >
+            <Shield class="w-8 h-8 text-royal-green/60 mb-3" />
             <h3 class="text-xl font-bold text-royal-green mb-3">
               Brazilian Jiu-Jitsu
             </h3>
@@ -136,6 +138,7 @@ useSeoMeta({
             to="/teach/dance"
             class="bg-surface-raised rounded-xl p-8 border border-royal-orange/15 hover:border-royal-orange/30 transition-all duration-300 group"
           >
+            <Music class="w-8 h-8 text-royal-orange/60 mb-3" />
             <h3 class="text-xl font-bold text-royal-orange mb-3">Urban Kiz</h3>
             <p class="text-text-on-dark-muted leading-relaxed mb-4">
               I guide dancers to build authentic connection by understanding how
@@ -170,9 +173,9 @@ useSeoMeta({
         <div class="text-center mt-8">
           <NuxtLink
             to="/blog"
-            class="inline-block px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/90 transition-all duration-300"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/90 transition-all duration-300"
           >
-            Read the Blog
+            <BookOpen class="w-4 h-4" /> Read the Blog
           </NuxtLink>
         </div>
       </div>

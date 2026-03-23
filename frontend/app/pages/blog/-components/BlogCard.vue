@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Calendar } from '@boxicons/vue'
+
 defineProps<{
   article: {
     title: string
@@ -64,7 +66,8 @@ function formatDate(date: string) {
         >
           {{ article.category.title }}
         </span>
-        <span v-if="article.publishDate" class="text-xs text-text-on-dark-faint">
+        <span v-if="article.publishDate" class="text-xs text-text-on-dark-faint flex items-center gap-1.5">
+          <Calendar class="w-3.5 h-3.5 shrink-0" />
           {{ formatDate(article.publishDate) }}
         </span>
       </div>

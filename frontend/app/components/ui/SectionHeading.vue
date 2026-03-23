@@ -8,7 +8,8 @@ defineProps<{
 
 <template>
   <div :class="['mb-12', centered && 'text-center']">
-    <h2 class="text-2xl font-bold text-text-on-dark">
+    <h2 class="text-2xl font-bold text-text-on-dark flex items-center gap-2" :class="centered ? 'justify-center' : ''">
+      <slot name="icon" />
       {{ title }}
     </h2>
     <div

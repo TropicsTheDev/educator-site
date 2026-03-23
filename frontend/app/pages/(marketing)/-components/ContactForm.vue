@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Send } from '@boxicons/vue'
+
 const formState = ref<'idle' | 'submitting' | 'success' | 'error'>('idle')
 const errorMessage = ref('')
 
@@ -112,9 +114,11 @@ async function handleSubmit() {
         type="submit"
         :disabled="formState === 'submitting'"
         class="w-full rounded-xl bg-royal-purple px-6 py-3 text-white font-semibold
-               hover:bg-royal-purple/90 hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+               hover:bg-royal-purple/90 hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
+               flex items-center justify-center gap-2"
       >
         {{ formState === 'submitting' ? 'Sending...' : 'Send Message' }}
+        <Send v-if="formState !== 'submitting'" class="w-4 h-4" />
       </button>
     </form>
   </div>

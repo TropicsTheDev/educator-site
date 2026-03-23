@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Envelope, Phone, MapIcon } from '@boxicons/vue'
 import ContactForm from './-components/ContactForm.vue'
 
 const { data: settings } = useSiteSettings()
@@ -34,8 +35,9 @@ useSeoMeta({
               <h3 class="font-semibold text-text-on-dark mb-1">Email</h3>
               <a
                 :href="`mailto:${settings.email}`"
-                class="text-royal-gold hover:underline"
+                class="text-royal-gold hover:underline flex items-start gap-2"
               >
+                <Envelope class="w-4 h-4 shrink-0 mt-0.5" />
                 {{ settings.email }}
               </a>
             </div>
@@ -44,15 +46,19 @@ useSeoMeta({
               <h3 class="font-semibold text-text-on-dark mb-1">Phone</h3>
               <a
                 :href="`tel:${settings.phone}`"
-                class="text-royal-gold hover:underline"
+                class="text-royal-gold hover:underline flex items-start gap-2"
               >
+                <Phone class="w-4 h-4 shrink-0 mt-0.5" />
                 {{ settings.phone }}
               </a>
             </div>
 
             <div v-if="settings?.location">
               <h3 class="font-semibold text-text-on-dark mb-1">Location</h3>
-              <p class="text-text-on-dark-muted">{{ settings.location }}</p>
+              <p class="text-text-on-dark-muted flex items-start gap-2">
+                <MapIcon class="w-4 h-4 shrink-0 mt-0.5" />
+                {{ settings.location }}
+              </p>
             </div>
 
             <div v-if="settings?.socialLinks?.length">

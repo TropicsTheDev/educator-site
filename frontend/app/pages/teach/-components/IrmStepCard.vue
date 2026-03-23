@@ -1,11 +1,17 @@
 <script setup lang="ts">
-defineProps<{
+import { Eye, MessageBubbleDots, LightBulbOn, RefreshCw } from '@boxicons/vue'
+
+const stepIcons = { 1: Eye, 2: MessageBubbleDots, 3: LightBulbOn, 4: RefreshCw }
+
+const props = defineProps<{
   stepNumber: number
   title: string
   description: string
   aside?: string
   accentColor: 'green' | 'orange'
 }>()
+
+const StepIcon = computed(() => stepIcons[props.stepNumber as keyof typeof stepIcons])
 </script>
 
 <template>
@@ -21,7 +27,8 @@ defineProps<{
       {{ stepNumber }}
     </span>
 
-    <h3 class="text-lg font-bold text-text-on-dark mb-3 relative z-10">
+    <h3 class="text-lg font-bold text-text-on-dark mb-3 relative z-10 flex items-center gap-2">
+      <component :is="StepIcon" class="w-5 h-5 shrink-0" />
       {{ title }}
     </h3>
     <p class="text-text-on-dark-muted leading-relaxed relative z-10">
