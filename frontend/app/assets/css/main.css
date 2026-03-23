@@ -39,13 +39,21 @@
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
 
-  --text-base: 18px;
-  --text-lg: 24px;
-  --text-xl: 32px;
-  --text-2xl: 43px;
-  --text-3xl: 57px;
-  --text-sm: 14px;
-  --text-xs: 12px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.125rem;   /* 18px */
+  --text-lg: 1.5rem;       /* 24px */
+  --text-xl: 2rem;         /* 32px */
+  --text-2xl: 2.6875rem;   /* 43px */
+  --text-3xl: 3.5625rem;   /* 57px */
+
+  --leading-text-xs: 1rem;
+  --leading-text-sm: 1.25rem;
+  --leading-text-base: 1.75rem;
+  --leading-text-lg: 2rem;
+  --leading-text-xl: 2.5rem;
+  --leading-text-2xl: 1.2;
+  --leading-text-3xl: 1.1;
 
   --leading-tight: 1.1;
   --leading-snug: 1.2;
