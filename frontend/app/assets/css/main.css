@@ -45,12 +45,8 @@
   --leading-relaxed: 1.6;
 
   /* ============================================
-   * SPACING & SHAPE
+   * SHAPE
    * ============================================ */
-  --spacing-section: 7rem;
-  --spacing-block: 3rem;
-  --spacing-element: 1.5rem;
-
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
