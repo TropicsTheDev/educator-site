@@ -11,8 +11,11 @@ defineProps<{
     <h2 class="text-2xl font-bold text-text-on-dark">
       {{ title }}
     </h2>
-    <div v-if="centered" class="w-12 h-0.5 bg-royal-gold/60 rounded-full mx-auto mt-4"></div>
-    <p v-if="subtitle" class="mt-3 text-lg text-text-on-dark-muted">
+    <div
+      class="w-16 h-0.5 bg-royal-gold/50 rounded-full mt-4"
+      :class="centered ? 'mx-auto' : ''"
+    />
+    <p v-if="subtitle" class="mt-4 text-lg text-text-on-dark-muted">
       {{ subtitle }}
     </p>
   </div>

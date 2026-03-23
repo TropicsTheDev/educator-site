@@ -1,27 +1,29 @@
 <script setup lang="ts">
-import { homePageQuery } from '~/queries/site.queries'
+import { homePageQuery } from "~/queries/site.queries";
 
-const { data } = useSanityQuery(homePageQuery)
-const { data: settings } = useSiteSettings()
+const { data } = useSanityQuery(homePageQuery);
+const { data: settings } = useSiteSettings();
 
-const testimonials = computed(() => data.value?.testimonials || [])
-const recentPosts = computed(() => data.value?.recentPosts || [])
-const coachName = computed(() => settings.value?.coachName || '')
+const testimonials = computed(() => data.value?.testimonials || []);
+const recentPosts = computed(() => data.value?.recentPosts || []);
+const coachName = computed(() => settings.value?.coachName || "");
 
 useSeoMeta({
-  title: 'Empowering Movement. Learning through Perception.',
+  title: "Empowering Movement. Learning through Perception.",
   description:
-    'I coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory and the Iterative Reorganization Method.',
-  ogTitle: 'Empowering Movement. Learning through Perception.',
+    "I coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory and the Iterative Reorganization Method.",
+  ogTitle: "Empowering Movement. Learning through Perception.",
   ogDescription:
-    'I coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory and the Iterative Reorganization Method.',
-})
+    "I coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory and the Iterative Reorganization Method.",
+});
 </script>
 
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-royal-purple/20 via-surface-base to-surface-base text-text-on-dark py-20 md:py-28">
+    <section
+      class="hero-glow bg-gradient-to-br from-royal-purple/20 via-surface-base to-surface-base text-text-on-dark py-24 md:py-32"
+    >
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12">
           <!-- Text -->
@@ -29,17 +31,21 @@ useSeoMeta({
             <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               Empowering Movement.<br />Learning through Perception.
             </h1>
-            <p class="text-lg text-text-on-dark-muted leading-relaxed mb-8 max-w-xl">
-              <template v-if="coachName">I'm {{ coachName }}. </template>I
-              coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control
-              Theory (PCT) and the Constraints-Led Approach. Together, we'll
-              explore <em>why</em> you move, not just <em>how</em> — so you can
-              adapt, create, and find your flow.
+            <p
+              class="text-lg text-text-on-dark-muted leading-relaxed mb-8 max-w-xl"
+            >
+              <template v-if="coachName">I'm {{ coachName }}. </template>I coach
+              Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory
+              (PCT) and the Constraints-Led Approach. Together, we'll explore
+              <em>why</em> you move, not just <em>how</em> — so you can adapt,
+              create, and find your flow.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
               <NuxtLink
                 to="/teach/bjj"
-                class="inline-block px-8 py-3 bg-royal-green text-surface-base font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(73,170,131,0.3)] transition-all duration-300"
+                class="inline-block px-8 py-3 border border-royal-green/30 text-royal-green rounded-xl hover:bg-royal-green/10 transition-all duration-300"
               >
                 Explore BJJ
               </NuxtLink>
@@ -81,7 +87,7 @@ useSeoMeta({
     </section>
 
     <!-- IRM Teaser -->
-    <section class="py-8">
+    <section class="py-6">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <p class="text-text-on-dark-muted italic">
           It's a four-step cycle that helps you rewire your instincts — and
@@ -96,8 +102,10 @@ useSeoMeta({
       </div>
     </section>
 
+    <div class="section-divider my-4" />
+
     <!-- Two Disciplines, One Framework -->
-    <section class="py-20">
+    <section class="py-20 md:py-24">
       <div class="max-w-6xl mx-auto px-4">
         <UiSectionHeading
           title="Two Disciplines, One Framework"
@@ -142,7 +150,7 @@ useSeoMeta({
     </section>
 
     <!-- Why PCT? -->
-    <section class="py-20 bg-surface-raised/30">
+    <section class="py-20 md:py-24 bg-surface-raised/30">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Why PCT?" centered />
         <div class="prose prose-lg max-w-none text-text-on-dark">
@@ -154,9 +162,9 @@ useSeoMeta({
           </p>
           <p>
             Now I coach by designing environments where you solve problems, not
-            copy moves. It's the same framework for the mat and the dance
-            floor — because at its heart, it's about human connection,
-            perception, and creativity.
+            copy moves. It's the same framework for the mat and the dance floor
+            — because at its heart, it's about human connection, perception, and
+            creativity.
           </p>
         </div>
         <div class="text-center mt-8">
@@ -171,7 +179,7 @@ useSeoMeta({
     </section>
 
     <!-- Testimonials -->
-    <section v-if="testimonials?.length" class="py-20">
+    <section v-if="testimonials?.length" class="py-20 md:py-24">
       <div class="max-w-6xl mx-auto px-4">
         <UiSectionHeading
           title="What Students Say"
@@ -192,7 +200,7 @@ useSeoMeta({
     </section>
 
     <!-- Recent Articles -->
-    <section class="py-20 bg-surface-raised/30">
+    <section class="py-20 md:py-24 bg-surface-raised/30">
       <div class="max-w-6xl mx-auto px-4">
         <UiSectionHeading
           title="Recent Articles"
@@ -215,9 +223,7 @@ useSeoMeta({
                 >
                   {{ post.category.title }}
                 </span>
-                <h3
-                  class="text-lg font-semibold text-text-on-dark mt-3 mb-2"
-                >
+                <h3 class="text-lg font-semibold text-text-on-dark mt-3 mb-2">
                   {{ post.title }}
                 </h3>
                 <p

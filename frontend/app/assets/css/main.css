@@ -14,38 +14,31 @@
 
   /* ============================================
    * DARK SURFACE HIERARCHY (3-tier elevation)
-   * ============================================
-   * Elevation is communicated through surface lightness,
-   * not shadows (shadows are invisible on dark backgrounds).
-   * base < raised < overlay
    * ============================================ */
   --color-surface-base: #0D0D1A;
   --color-surface-raised: #16162B;
   --color-surface-overlay: #1E1E38;
 
-  /* Light mode surfaces (used with .light class) */
+  /* Light mode surfaces */
   --color-surface-light: #FAFAF8;
   --color-surface-white: #FFFFFF;
-
-  /* Legacy — kept for footer compatibility */
   --color-surface-dark: #1A1A2E;
 
   /* ============================================
    * TEXT COLORS
    * ============================================ */
-
-  /* Dark mode text (primary design) */
   --color-text-on-dark: #E8E6F0;
   --color-text-on-dark-muted: #9896A8;
   --color-text-on-dark-faint: #5C5A6E;
-
-  /* Light mode text */
   --color-text-primary: #1A1A2E;
   --color-text-secondary: #4A4A68;
 
   /* ============================================
-   * TYPOGRAPHY SCALE (1.333 ratio)
+   * TYPOGRAPHY
    * ============================================ */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
   --text-base: 18px;
   --text-lg: 24px;
   --text-xl: 32px;
@@ -54,7 +47,6 @@
   --text-sm: 14px;
   --text-xs: 12px;
 
-  /* Line heights */
   --leading-tight: 1.1;
   --leading-snug: 1.2;
   --leading-normal: 1.5;
@@ -75,9 +67,82 @@
 }
 
 /* ============================================
+ * BASE TYPOGRAPHY
+ * ============================================ */
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+  }
+}
+
+/* ============================================
+ * VISUAL TEXTURE — Subtle noise grain overlay
+ * Barely visible (2.5% opacity) but removes
+ * the "flat digital screen" feel.
+ * ============================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ============================================
+ * HERO GLOW — Soft radial gradient behind hero content
+ * Use: class="hero-glow" on hero sections
+ * Customize color: style="--glow-color: rgba(...)"
+ * ============================================ */
+.hero-glow {
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    var(--glow-color, rgba(120, 81, 169, 0.1)),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+ * SECTION DIVIDER — Gold accent between sections
+ * Use: <div class="section-divider" />
+ * ============================================ */
+.section-divider {
+  width: 4rem;
+  height: 2px;
+  background: var(--color-royal-gold);
+  opacity: 0.4;
+  border-radius: 9999px;
+  margin: 0 auto;
+}
+
+/* ============================================
  * DARK PROSE OVERRIDES
- * Customizes @tailwindcss/typography for dark backgrounds.
- * Gold bullets, purple quote borders, orange code.
  * ============================================ */
 .dark .prose {
   --tw-prose-body: #E8E6F0;
@@ -109,24 +174,8 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
 
-/* ============================================
- * WCAG AA CONTRAST REFERENCE
- * ============================================
- * ON DARK (#0D0D1A):
- *   royal-gold    → 17.36:1 (PASS — excellent)
- *   royal-orange  → 9.61:1  (PASS)
- *   royal-green   → 7.36:1  (PASS)
- *   royal-purple  → 3.55:1  (PASS large text only)
- *   text-on-dark  → excellent
- *
- * ON LIGHT (#FAFAF8):
- *   royal-purple  → 5.92:1  (PASS)
- *   text-primary  → excellent
- *   gold/green/orange → FAIL as text
- *
- * SAFE DARK USAGE:
- *   All 4 colors work as text on dark surfaces.
- *   Purple is large-text only on darkest surface.
- * ============================================ */
+  body::before {
+    display: none;
+  }
+}

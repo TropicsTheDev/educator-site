@@ -54,8 +54,24 @@ export default defineNuxtConfig({
     },
   },
 
-  // Font loading via @nuxt/fonts — self-hosted with fallback metrics
+  // Font loading — Fraunces (display serif) + DM Sans (body)
   fonts: {
+    families: [
+      {
+        name: "Fraunces",
+        provider: "google",
+        weights: [400, 500, 600, 700],
+        styles: ["normal", "italic"],
+        subsets: ["latin"],
+      },
+      {
+        name: "DM Sans",
+        provider: "google",
+        weights: [400, 500],
+        styles: ["normal", "italic"],
+        subsets: ["latin"],
+      },
+    ],
     defaults: {
       weights: [400, 700],
       styles: ["normal"],

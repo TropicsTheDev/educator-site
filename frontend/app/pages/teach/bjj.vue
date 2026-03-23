@@ -1,11 +1,44 @@
 <script setup lang="ts">
 import DisciplineTestimonials from './-components/DisciplineTestimonials.vue'
+import IrmCycle from './-components/IrmCycle.vue'
+import ComparisonList from './-components/ComparisonList.vue'
 import { teachingTestimonialsQuery } from '~/queries/teaching.queries'
 
 const { data: testimonials } = useSanityQuery(teachingTestimonialsQuery, { discipline: 'bjj' })
 const { data: settings } = useSiteSettings()
 
 const calendlyUrl = computed(() => settings.value?.calendlyBjjUrl || '')
+
+const irmSteps = [
+  {
+    stepNumber: 1,
+    title: 'We Start with a Task-Based Game',
+    description: 'No lecture. No demonstration. We begin with a specific, live scenario — a game that highlights exactly where you feel stuck. Maybe it\'s maintaining guard while your partner tries to pass with a specific constraint. Maybe it\'s escaping a bad position with limited grips.',
+    aside: 'This isn\'t about failure. It\'s about creating an honest starting point so we know precisely what we\'re solving together.',
+  },
+  {
+    stepNumber: 2,
+    title: 'We Explore Your Experience',
+    description: 'We pause and reflect. I\'ll ask: What did you feel? What were you trying to do? What stopped you? This step builds awareness. It helps us move from "I got passed" to understanding the deeper cues and sensations that led there. And awareness, as you\'ll discover, is the first step to gaining control.',
+  },
+  {
+    stepNumber: 3,
+    title: 'We Introduce a Clear, Useful Tool',
+    description: 'With the real problem identified, I offer a focused "anchor" — a principle, a detail, or a short sequence. This isn\'t a rigid rule to obey forever. It\'s a testable tool, a new option for your toolkit to try against the very problem you just faced.',
+  },
+  {
+    stepNumber: 4,
+    title: 'We Integrate and Rebuild Together',
+    description: 'You immediately return to the task-based game, now with the new tool. The goal isn\'t perfection — it\'s discovery. Does this help you control the situation better? Does it create the feeling you were missing? We repeat this cycle, refining your skill in the context where it must work: under pressure.',
+  },
+]
+
+const comparisonItems = [
+  { positive: 'Real, transferable skill that works on any partner', negative: 'Techniques that only work in drilling' },
+  { positive: 'The ability to coach yourself long after our sessions', negative: 'Dependence on someone else\'s instruction' },
+  { positive: 'Clearer understanding of Jiu-Jitsu\'s underlying "feel"', negative: 'A collection of memorized steps' },
+  { positive: 'Engagement and curiosity in every roll', negative: 'Frustration and stagnation' },
+]
 
 useSeoMeta({
   title: "BJJ Coaching — Feeling Stuck on the Mats? Let's Build Your Game Together.",
@@ -18,7 +51,7 @@ useSeoMeta({
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-royal-green/15 via-surface-base to-surface-base text-text-on-dark py-20 md:py-28">
+    <section class="hero-glow bg-gradient-to-br from-royal-green/15 via-surface-base to-surface-base text-text-on-dark py-24 md:py-32" style="--glow-color: rgba(73, 170, 131, 0.08)">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
           Feeling Stuck on the Mats?<br />Let's Build Your Game Together.
@@ -31,7 +64,7 @@ useSeoMeta({
     </section>
 
     <!-- Intro -->
-    <section class="py-16">
+    <section class="py-14 md:py-16">
       <div class="max-w-3xl mx-auto px-4 prose prose-lg max-w-none">
         <p>
           You're not alone — and more important, you're not broken. Traditional Jiu-Jitsu teaching
@@ -42,7 +75,7 @@ useSeoMeta({
     </section>
 
     <!-- My Approach -->
-    <section class="py-16 bg-surface-raised/30">
+    <section class="py-14 md:py-16 bg-surface-raised/30">
       <div class="max-w-3xl mx-auto px-4">
         <UiSectionHeading
           title="My Approach: Skill Through Problem-Solving, Not Memorization"
@@ -62,116 +95,29 @@ useSeoMeta({
       </div>
     </section>
 
+    <div class="section-divider my-4" />
+
     <!-- IRM Cycle -->
-    <section class="py-16">
+    <section class="py-20 md:py-24">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading
           title="How We Learn Together: The Iterative Reorganization Method"
           subtitle="Think of our sessions as a collaborative cycle — moving from struggle to insight, and from insight to integrated skill. Each lesson follows the same four-step rhythm:"
         />
 
-        <div class="grid md:grid-cols-2 gap-6 mt-8">
-          <!-- Step 1 -->
-          <div class="bg-surface-raised rounded-xl p-6 border border-white/5">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-10 h-10 rounded-full bg-royal-green text-white flex items-center justify-center font-bold text-lg">1</span>
-              <h3 class="text-lg font-bold text-text-on-dark">We Start with a Task-Based Game</h3>
-            </div>
-            <p class="text-text-on-dark-muted leading-relaxed">
-              No lecture. No demonstration. We begin with a specific, live scenario — a game that highlights
-              exactly where you feel stuck. Maybe it's maintaining guard while your partner tries to pass
-              with a specific constraint. Maybe it's escaping a bad position with limited grips.
-            </p>
-            <p class="text-text-on-dark-faint leading-relaxed mt-3 italic text-sm">
-              This isn't about failure. It's about creating an honest starting point so we know precisely
-              what we're solving together.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="bg-surface-raised rounded-xl p-6 border border-white/5">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-10 h-10 rounded-full bg-royal-green text-white flex items-center justify-center font-bold text-lg">2</span>
-              <h3 class="text-lg font-bold text-text-on-dark">We Explore Your Experience</h3>
-            </div>
-            <p class="text-text-on-dark-muted leading-relaxed">
-              We pause and reflect. I'll ask: <em>What did you feel? What were you trying to do? What stopped you?</em>
-            </p>
-            <p class="text-text-on-dark-muted leading-relaxed mt-3">
-              This step builds awareness. It helps us move from "I got passed" to understanding the deeper
-              cues and sensations that led there. And awareness, as you'll discover, is the first step to
-              gaining control.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="bg-surface-raised rounded-xl p-6 border border-white/5">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-10 h-10 rounded-full bg-royal-green text-white flex items-center justify-center font-bold text-lg">3</span>
-              <h3 class="text-lg font-bold text-text-on-dark">We Introduce a Clear, Useful Tool</h3>
-            </div>
-            <p class="text-text-on-dark-muted leading-relaxed">
-              With the real problem identified, I offer a focused "anchor" — a principle, a detail, or a short
-              sequence. This isn't a rigid rule to obey forever. It's a testable tool, a new option for your
-              toolkit to try against the very problem you just faced.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="bg-surface-raised rounded-xl p-6 border border-white/5">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-10 h-10 rounded-full bg-royal-green text-white flex items-center justify-center font-bold text-lg">4</span>
-              <h3 class="text-lg font-bold text-text-on-dark">We Integrate and Rebuild Together</h3>
-            </div>
-            <p class="text-text-on-dark-muted leading-relaxed">
-              You immediately return to the task-based game, now with the new tool. The goal isn't
-              perfection — it's discovery. <em>Does this help you control the situation better? Does it
-              create the feeling you were missing?</em>
-            </p>
-            <p class="text-text-on-dark-muted leading-relaxed mt-3">
-              We repeat this cycle, refining your skill in the context where it must work: under pressure.
-            </p>
-          </div>
+        <div class="mt-8">
+          <IrmCycle :steps="irmSteps" discipline="bjj" />
         </div>
       </div>
     </section>
 
     <!-- Why This Method Works -->
-    <section class="py-16 bg-surface-raised/30">
+    <section class="py-16 md:py-20 bg-surface-raised/30">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Why This Method Works" centered />
-        <div class="grid grid-cols-2 gap-0 mt-8 rounded-xl overflow-hidden border border-white/5">
-          <!-- Header -->
-          <div class="bg-royal-green text-white p-4 font-semibold text-sm">You'll walk away with...</div>
-          <div class="bg-surface-overlay text-text-on-dark-muted p-4 font-semibold text-sm">Instead of...</div>
-          <!-- Row 1 -->
-          <div class="bg-surface-raised p-4 border-b border-white/5 text-text-on-dark text-sm">
-            Real, transferable skill that works on any partner
-          </div>
-          <div class="bg-surface-raised p-4 border-b border-white/5 text-text-on-dark-faint text-sm line-through">
-            Techniques that only work in drilling
-          </div>
-          <!-- Row 2 -->
-          <div class="bg-surface-base p-4 border-b border-white/5 text-text-on-dark text-sm">
-            The ability to coach yourself long after our sessions
-          </div>
-          <div class="bg-surface-base p-4 border-b border-white/5 text-text-on-dark-faint text-sm line-through">
-            Dependence on someone else's instruction
-          </div>
-          <!-- Row 3 -->
-          <div class="bg-surface-raised p-4 border-b border-white/5 text-text-on-dark text-sm">
-            Clearer understanding of Jiu-Jitsu's underlying "feel"
-          </div>
-          <div class="bg-surface-raised p-4 border-b border-white/5 text-text-on-dark-faint text-sm line-through">
-            A collection of memorized steps
-          </div>
-          <!-- Row 4 -->
-          <div class="bg-surface-base p-4 text-text-on-dark text-sm">
-            Engagement and curiosity in every roll
-          </div>
-          <div class="bg-surface-base p-4 text-text-on-dark-faint text-sm line-through">
-            Frustration and stagnation
-          </div>
+
+        <div class="mt-8">
+          <ComparisonList :items="comparisonItems" discipline="bjj" />
         </div>
 
         <p class="mt-8 text-text-on-dark text-center max-w-2xl mx-auto leading-relaxed">
@@ -182,7 +128,7 @@ useSeoMeta({
     </section>
 
     <!-- Practical Details -->
-    <section class="py-16">
+    <section class="py-14">
       <div class="max-w-3xl mx-auto px-4">
         <UiSectionHeading title="Practical Details" />
         <div class="space-y-4">
@@ -211,7 +157,7 @@ useSeoMeta({
     </section>
 
     <!-- CTA -->
-    <section class="py-16 bg-surface-raised/30">
+    <section class="py-16 md:py-20 bg-surface-raised/30">
       <div class="max-w-3xl mx-auto px-4 text-center">
         <UiCalendlyButton
           v-if="calendlyUrl"

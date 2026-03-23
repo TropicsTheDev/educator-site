@@ -19,7 +19,7 @@ useSchemaOrg([
 <template>
   <div>
     <!-- Hero -->
-    <section class="relative bg-gradient-to-br from-royal-purple/20 to-surface-base py-20 text-text-on-dark">
+    <section class="hero-glow relative bg-gradient-to-br from-royal-purple/20 to-surface-base py-20 text-text-on-dark">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">About</h1>
       </div>

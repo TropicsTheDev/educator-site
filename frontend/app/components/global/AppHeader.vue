@@ -4,11 +4,20 @@ defineProps<{
 }>()
 
 const sidebarVisible = ref(false)
+const linksVisible = ref(false)
 const router = useRouter()
 const colorMode = useColorMode()
 
 router.afterEach(() => {
   sidebarVisible.value = false
+})
+
+watch(sidebarVisible, (val) => {
+  if (val) {
+    setTimeout(() => { linksVisible.value = true }, 100)
+  } else {
+    linksVisible.value = false
+  }
 })
 
 function toggleColorMode() {
@@ -29,7 +38,7 @@ const navLinks = [
 <template>
   <header class="sticky top-0 z-50 bg-surface-base/90 backdrop-blur-md border-b border-white/5 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <NuxtLink to="/" class="text-xl font-bold text-royal-gold hover:text-royal-gold/80 transition-all duration-300">
+      <NuxtLink to="/" class="text-xl font-bold font-display text-royal-gold hover:text-royal-gold/80 transition-all duration-300">
         {{ settings?.siteTitle || 'PCT Movement' }}
       </NuxtLink>
 
@@ -92,14 +101,38 @@ const navLinks = [
               </svg>
             </button>
             <NuxtLink
-              v-for="link in navLinks"
+              v-for="(link, index) in navLinks"
               :key="link.to"
               :to="link.to"
+              :class="linksVisible ? 'nav-link-active' : 'nav-link-enter'"
+              :style="{ transitionDelay: `${index * 50}ms` }"
               class="py-3 text-lg font-medium text-text-on-dark hover:text-royal-gold border-b border-white/5 transition-all duration-300"
               active-class="!text-royal-gold"
             >
               {{ link.label }}
             </NuxtLink>
+
+            <!-- Social links & CTA -->
+            <div class="mt-auto border-t border-white/5 pt-6">
+              <div v-if="settings?.socialLinks" class="flex flex-wrap gap-4 mb-4">
+                <a
+                  v-for="social in settings.socialLinks"
+                  :key="social.url"
+                  :href="social.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-text-on-dark-faint hover:text-royal-gold transition-all duration-300 text-sm"
+                >
+                  {{ social.label || social.platform }}
+                </a>
+              </div>
+              <NuxtLink
+                to="/contact"
+                class="block w-full text-center px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300"
+              >
+                Book a Session
+              </NuxtLink>
+            </div>
           </nav>
         </div>
       </Transition>
@@ -123,5 +156,15 @@ const navLinks = [
 .sidebar-enter-from nav,
 .sidebar-leave-to nav {
   transform: translateX(100%);
+}
+
+.nav-link-enter {
+  opacity: 0;
+  transform: translateX(1rem);
+}
+.nav-link-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 </style>
