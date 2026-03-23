@@ -58,8 +58,10 @@ export default defineNuxtConfig({
   // Hybrid rendering — prerender static pages, ISR for blog, SSR for contact
   routeRules: {
     "/": { prerender: true },
-    "/bjj": { prerender: true },
-    "/dance": { prerender: true },
+    "/teach/bjj": { prerender: true },
+    "/teach/dance": { prerender: true },
+    "/bjj": { redirect: "/teach/bjj" },
+    "/dance": { redirect: "/teach/dance" },
     "/about": { prerender: true },
     "/portfolio": { prerender: true },
     "/blog": { isr: 3600 },

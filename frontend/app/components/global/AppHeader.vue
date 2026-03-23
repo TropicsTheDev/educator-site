@@ -13,8 +13,8 @@ router.afterEach(() => {
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'BJJ', to: '/bjj' },
-  { label: 'Dance', to: '/dance' },
+  { label: 'BJJ', to: '/teach/bjj' },
+  { label: 'Dance', to: '/teach/dance' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
