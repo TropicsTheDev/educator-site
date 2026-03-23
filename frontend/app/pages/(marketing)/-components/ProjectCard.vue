@@ -14,9 +14,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+  <div class="rounded-xl border border-white/5 overflow-hidden bg-surface-raised hover:border-white/10 transition-all duration-300">
     <!-- Image -->
-    <div v-if="project.featuredImage" class="aspect-video bg-gray-100">
+    <div v-if="project.featuredImage" class="aspect-video bg-surface-overlay">
       <SanityImage
         :asset-id="project.featuredImage.asset?._ref || project.featuredImage"
         auto="format"
@@ -26,18 +26,18 @@ defineProps<{
         :alt="project.title"
       />
     </div>
-    <div v-else class="aspect-video bg-gray-100 flex items-center justify-center">
-      <span class="text-gray-400 text-sm">No image</span>
+    <div v-else class="aspect-video bg-surface-overlay flex items-center justify-center">
+      <span class="text-text-on-dark-faint text-sm">No image</span>
     </div>
 
     <div class="p-5">
       <!-- Title -->
-      <h3 class="text-lg font-bold text-text-primary mb-2">
+      <h3 class="text-lg font-bold text-text-on-dark mb-2">
         {{ project.title }}
       </h3>
 
       <!-- Description -->
-      <p v-if="project.description" class="text-text-secondary text-sm mb-4 line-clamp-3">
+      <p v-if="project.description" class="text-text-on-dark-muted text-sm mb-4 line-clamp-3">
         {{ project.description }}
       </p>
 
@@ -46,7 +46,7 @@ defineProps<{
         <span
           v-for="tech in project.techStack"
           :key="tech"
-          class="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-700"
+          class="text-xs font-medium px-2.5 py-1 rounded-full bg-surface-overlay text-text-on-dark-muted"
         >
           {{ tech }}
         </span>
@@ -59,7 +59,7 @@ defineProps<{
           :href="project.liveUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm font-medium text-royal-purple hover:underline"
+          class="text-sm font-medium text-royal-purple hover:text-royal-gold transition-colors duration-300"
         >
           Live Site &rarr;
         </a>
@@ -68,7 +68,7 @@ defineProps<{
           :href="project.sourceUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm font-medium text-gray-600 hover:underline"
+          class="text-sm font-medium text-text-on-dark-muted hover:text-text-on-dark transition-colors duration-300"
         >
           Source Code
         </a>

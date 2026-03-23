@@ -21,7 +21,7 @@ useSeoMeta({
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-royal-purple text-white py-20 md:py-28">
+    <section class="bg-gradient-to-br from-royal-purple/20 via-surface-base to-surface-base text-text-on-dark py-20 md:py-28">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12">
           <!-- Text -->
@@ -29,7 +29,7 @@ useSeoMeta({
             <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               Empowering Movement.<br />Learning through Perception.
             </h1>
-            <p class="text-lg text-white/85 leading-relaxed mb-8 max-w-xl">
+            <p class="text-lg text-text-on-dark-muted leading-relaxed mb-8 max-w-xl">
               <template v-if="coachName">I'm {{ coachName }}. </template>I
               coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control
               Theory (PCT) and the Constraints-Led Approach. Together, we'll
@@ -39,13 +39,13 @@ useSeoMeta({
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <NuxtLink
                 to="/teach/bjj"
-                class="inline-block px-8 py-3 rounded-lg bg-royal-gold text-text-primary font-semibold hover:bg-royal-gold/90 transition-colors"
+                class="inline-block px-8 py-3 bg-royal-green text-surface-base font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(73,170,131,0.3)] transition-all duration-300"
               >
                 Explore BJJ
               </NuxtLink>
               <NuxtLink
                 to="/teach/dance"
-                class="inline-block px-8 py-3 rounded-lg bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition-colors"
+                class="inline-block px-8 py-3 border border-royal-orange/30 text-royal-orange rounded-xl hover:bg-royal-orange/10 transition-all duration-300"
               >
                 Explore Urban Kiz
               </NuxtLink>
@@ -55,9 +55,9 @@ useSeoMeta({
           <!-- Coach photo placeholder -->
           <div class="shrink-0">
             <div
-              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center"
+              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-white/10 flex items-center justify-center"
             >
-              <div class="text-center text-white/40">
+              <div class="text-center text-text-on-dark-faint">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-16 w-16 mx-auto mb-2"
@@ -81,14 +81,14 @@ useSeoMeta({
     </section>
 
     <!-- IRM Teaser -->
-    <section class="py-8 bg-surface-light">
+    <section class="py-8">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <p class="text-text-secondary italic">
+        <p class="text-text-on-dark-muted italic">
           It's a four-step cycle that helps you rewire your instincts — and
           we'll use it in every session.
           <NuxtLink
             to="/teach/bjj"
-            class="text-royal-purple hover:underline ml-1"
+            class="text-royal-gold hover:underline ml-1"
           >
             Learn more &rarr;
           </NuxtLink>
@@ -108,17 +108,17 @@ useSeoMeta({
           <!-- BJJ Card -->
           <NuxtLink
             to="/teach/bjj"
-            class="bg-white rounded-lg p-8 shadow-sm border border-royal-purple/5 hover:shadow-md transition-shadow group"
+            class="bg-surface-raised rounded-xl p-8 border border-royal-green/15 hover:border-royal-green/30 transition-all duration-300 group"
           >
-            <h3 class="text-xl font-bold text-royal-purple mb-3">
+            <h3 class="text-xl font-bold text-royal-green mb-3">
               Brazilian Jiu-Jitsu
             </h3>
-            <p class="text-text-secondary leading-relaxed mb-4">
+            <p class="text-text-on-dark-muted leading-relaxed mb-4">
               I help practitioners break through plateaus by learning to
               perceive and manage forces — no more memorizing moves that vanish
               under pressure.
             </p>
-            <span class="text-royal-purple font-medium group-hover:underline">
+            <span class="text-royal-green font-medium group-hover:underline">
               Learn more &rarr;
             </span>
           </NuxtLink>
@@ -126,14 +126,14 @@ useSeoMeta({
           <!-- Urban Kiz Card -->
           <NuxtLink
             to="/teach/dance"
-            class="bg-white rounded-lg p-8 shadow-sm border border-royal-purple/5 hover:shadow-md transition-shadow group"
+            class="bg-surface-raised rounded-xl p-8 border border-royal-orange/15 hover:border-royal-orange/30 transition-all duration-300 group"
           >
-            <h3 class="text-xl font-bold text-royal-purple mb-3">Urban Kiz</h3>
-            <p class="text-text-secondary leading-relaxed mb-4">
+            <h3 class="text-xl font-bold text-royal-orange mb-3">Urban Kiz</h3>
+            <p class="text-text-on-dark-muted leading-relaxed mb-4">
               I guide dancers to build authentic connection by understanding how
               perception shapes lead, follow, and musicality.
             </p>
-            <span class="text-royal-purple font-medium group-hover:underline">
+            <span class="text-royal-orange font-medium group-hover:underline">
               Learn more &rarr;
             </span>
           </NuxtLink>
@@ -142,10 +142,10 @@ useSeoMeta({
     </section>
 
     <!-- Why PCT? -->
-    <section class="py-20 bg-surface-light">
+    <section class="py-20 bg-surface-raised/30">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Why PCT?" centered />
-        <div class="prose prose-lg max-w-none text-text-primary">
+        <div class="prose prose-lg max-w-none text-text-on-dark">
           <p>
             I started teaching BJJ and dance the way I was taught — with
             techniques and patterns. But I saw students hit walls. Their skills
@@ -162,7 +162,7 @@ useSeoMeta({
         <div class="text-center mt-8">
           <NuxtLink
             to="/blog"
-            class="inline-block px-6 py-3 bg-royal-purple text-white font-medium rounded-md hover:bg-royal-purple/90 transition-colors"
+            class="inline-block px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/90 transition-all duration-300"
           >
             Read the Blog
           </NuxtLink>
@@ -192,7 +192,7 @@ useSeoMeta({
     </section>
 
     <!-- Recent Articles -->
-    <section class="py-20 bg-surface-light">
+    <section class="py-20 bg-surface-raised/30">
       <div class="max-w-6xl mx-auto px-4">
         <UiSectionHeading
           title="Recent Articles"
@@ -206,27 +206,27 @@ useSeoMeta({
               v-for="post in recentPosts"
               :key="post._id"
               :to="`/blog/${post.slug}`"
-              class="bg-white rounded-lg overflow-hidden shadow-sm border border-royal-purple/5 hover:shadow-md transition-shadow"
+              class="bg-surface-raised rounded-xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-300"
             >
               <div class="p-6">
                 <span
                   v-if="post.category"
-                  class="text-xs font-medium px-2 py-0.5 rounded-full bg-royal-purple/10 text-royal-purple"
+                  class="text-xs font-medium px-2 py-0.5 rounded-full bg-royal-purple/15 text-royal-purple"
                 >
                   {{ post.category.title }}
                 </span>
                 <h3
-                  class="text-lg font-semibold text-text-primary mt-3 mb-2"
+                  class="text-lg font-semibold text-text-on-dark mt-3 mb-2"
                 >
                   {{ post.title }}
                 </h3>
                 <p
                   v-if="post.excerpt"
-                  class="text-sm text-text-secondary leading-relaxed mb-3 line-clamp-3"
+                  class="text-sm text-text-on-dark-muted leading-relaxed mb-3 line-clamp-3"
                 >
                   {{ post.excerpt }}
                 </p>
-                <span class="text-royal-purple text-sm font-medium">
+                <span class="text-royal-gold text-sm font-medium">
                   Read more &rarr;
                 </span>
               </div>
@@ -235,7 +235,7 @@ useSeoMeta({
           <div class="text-center mt-10">
             <NuxtLink
               to="/blog"
-              class="inline-block px-6 py-3 border border-royal-purple text-royal-purple font-medium rounded-md hover:bg-royal-purple/5 transition-colors"
+              class="inline-block px-6 py-3 border border-royal-gold text-royal-gold font-medium rounded-xl hover:bg-royal-gold/10 transition-all duration-300"
             >
               View All Posts
             </NuxtLink>
@@ -243,7 +243,7 @@ useSeoMeta({
         </template>
 
         <template v-else>
-          <p class="text-center text-text-secondary italic">
+          <p class="text-center text-text-on-dark-muted italic">
             No posts yet. Check back soon!
           </p>
         </template>

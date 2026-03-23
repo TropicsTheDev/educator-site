@@ -11,22 +11,34 @@ const disciplineLabel = computed(() => {
   if (props.discipline === 'kiz') return 'Urban Kiz'
   return props.discipline
 })
+
+const leftBorderClass = computed(() => {
+  if (props.discipline === 'bjj') return 'border-l-2 border-l-royal-green'
+  if (props.discipline === 'kiz') return 'border-l-2 border-l-royal-orange'
+  return ''
+})
+
+const badgeClass = computed(() => {
+  if (props.discipline === 'bjj') return 'bg-royal-green/10 text-royal-green'
+  if (props.discipline === 'kiz') return 'bg-royal-orange/10 text-royal-orange'
+  return 'bg-royal-purple/10 text-royal-purple'
+})
 </script>
 
 <template>
-  <div class="bg-white rounded-lg p-6 shadow-sm border border-royal-purple/5 hover:shadow-md transition-shadow">
-    <blockquote class="text-text-primary italic leading-relaxed mb-4">
+  <div :class="['bg-surface-raised rounded-xl p-6 border border-white/5 hover:border-white/10 transition-all duration-300', leftBorderClass]">
+    <blockquote class="text-text-on-dark italic leading-relaxed mb-4">
       "{{ quote }}"
     </blockquote>
     <div class="flex items-center gap-3">
-      <div v-if="photo" class="shrink-0 w-10 h-10 rounded-full overflow-hidden bg-surface-light">
+      <div v-if="photo" class="shrink-0 w-10 h-10 rounded-full overflow-hidden bg-surface-overlay">
         <SanityImage :asset-id="photo?.asset?._ref" class="w-full h-full object-cover" />
       </div>
       <div>
-        <span class="font-medium text-sm text-text-primary">{{ studentName }}</span>
+        <span class="font-medium text-sm text-text-on-dark">{{ studentName }}</span>
         <span
           v-if="discipline"
-          class="ml-2 text-xs px-2 py-0.5 rounded-full font-medium bg-royal-purple/10 text-royal-purple"
+          :class="['ml-2 text-xs px-2 py-0.5 rounded-full font-medium', badgeClass]"
         >
           {{ disciplineLabel }}
         </span>

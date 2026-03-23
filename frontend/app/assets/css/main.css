@@ -4,26 +4,53 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Tetradic color palette */
+  /* ============================================
+   * TETRADIC COLOR PALETTE
+   * ============================================ */
   --color-royal-purple: #7851A9;
   --color-royal-gold: #F9ED6C;
   --color-royal-green: #49AA83;
   --color-royal-orange: #F9966C;
 
-  /* Surface and text colors for contrast safety */
-  --color-text-primary: #1A1A2E;
-  --color-text-secondary: #4A4A68;
+  /* ============================================
+   * DARK SURFACE HIERARCHY (3-tier elevation)
+   * ============================================
+   * Elevation is communicated through surface lightness,
+   * not shadows (shadows are invisible on dark backgrounds).
+   * base < raised < overlay
+   * ============================================ */
+  --color-surface-base: #0D0D1A;
+  --color-surface-raised: #16162B;
+  --color-surface-overlay: #1E1E38;
+
+  /* Light mode surfaces (used with .light class) */
   --color-surface-light: #FAFAF8;
   --color-surface-white: #FFFFFF;
+
+  /* Legacy — kept for footer compatibility */
   --color-surface-dark: #1A1A2E;
 
-  /* Typography scale (1.333 ratio) */
+  /* ============================================
+   * TEXT COLORS
+   * ============================================ */
+
+  /* Dark mode text (primary design) */
+  --color-text-on-dark: #E8E6F0;
+  --color-text-on-dark-muted: #9896A8;
+  --color-text-on-dark-faint: #5C5A6E;
+
+  /* Light mode text */
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #4A4A68;
+
+  /* ============================================
+   * TYPOGRAPHY SCALE (1.333 ratio)
+   * ============================================ */
   --text-base: 18px;
   --text-lg: 24px;
   --text-xl: 32px;
   --text-2xl: 43px;
   --text-3xl: 57px;
-
   --text-sm: 14px;
   --text-xs: 12px;
 
@@ -33,19 +60,46 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.6;
 
-  /* Spacing scale */
-  --spacing-section: 6rem;
+  /* ============================================
+   * SPACING & SHAPE
+   * ============================================ */
+  --spacing-section: 7rem;
   --spacing-block: 3rem;
   --spacing-element: 1.5rem;
 
-  /* Border radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
 }
 
-/* Accessibility: reduce motion for vestibular sensitivity */
+/* ============================================
+ * DARK PROSE OVERRIDES
+ * Customizes @tailwindcss/typography for dark backgrounds.
+ * Gold bullets, purple quote borders, orange code.
+ * ============================================ */
+.dark .prose {
+  --tw-prose-body: #E8E6F0;
+  --tw-prose-headings: #E8E6F0;
+  --tw-prose-lead: #9896A8;
+  --tw-prose-links: #7851A9;
+  --tw-prose-bold: #E8E6F0;
+  --tw-prose-counters: #9896A8;
+  --tw-prose-bullets: #F9ED6C;
+  --tw-prose-hr: rgba(255, 255, 255, 0.1);
+  --tw-prose-quotes: #F9ED6C;
+  --tw-prose-quote-borders: #7851A9;
+  --tw-prose-code: #F9966C;
+  --tw-prose-pre-code: #E8E6F0;
+  --tw-prose-pre-bg: #16162B;
+  --tw-prose-th-borders: rgba(255, 255, 255, 0.1);
+  --tw-prose-td-borders: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+ * ACCESSIBILITY
+ * ============================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -57,31 +111,22 @@
   }
 }
 
-/*
+/* ============================================
+ * WCAG AA CONTRAST REFERENCE
  * ============================================
- * WCAG AA Contrast Reference
- * ============================================
- * PASS AA normal (4.5:1):
- *   - royal-purple on white (5.92:1)
- *   - royal-purple on royal-gold (4.89:1)
- *   - text-primary on white (excellent)
- *   - text-primary on surface-light (excellent)
- *   - white on royal-purple (5.92:1)
- *   - royal-gold on surface-dark (17.36:1)
- *   - royal-green on surface-dark (7.36:1)
- *   - royal-orange on surface-dark (9.61:1)
+ * ON DARK (#0D0D1A):
+ *   royal-gold    → 17.36:1 (PASS — excellent)
+ *   royal-orange  → 9.61:1  (PASS)
+ *   royal-green   → 7.36:1  (PASS)
+ *   royal-purple  → 3.55:1  (PASS large text only)
+ *   text-on-dark  → excellent
  *
- * PASS AA large text only (3:1):
- *   - royal-purple on black (3.55:1) — headings 24px+ only
+ * ON LIGHT (#FAFAF8):
+ *   royal-purple  → 5.92:1  (PASS)
+ *   text-primary  → excellent
+ *   gold/green/orange → FAIL as text
  *
- * FAIL on white backgrounds:
- *   - royal-gold (1.21:1) — NEVER use as text on light bg
- *   - royal-green (2.85:1) — NEVER use as text on light bg
- *   - royal-orange (2.19:1) — NEVER use as text on light bg
- *
- * SAFE USAGE GUIDE:
- *   - Text on light backgrounds: use text-primary or royal-purple
- *   - Colored backgrounds with dark text: safe for all 4 palette colors
- *   - Accent colors (gold, green, orange): borders, badges, bg fills only
- * ============================================
- */
+ * SAFE DARK USAGE:
+ *   All 4 colors work as text on dark surfaces.
+ *   Purple is large-text only on darkest surface.
+ * ============================================ */

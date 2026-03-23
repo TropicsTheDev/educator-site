@@ -46,7 +46,7 @@ useSeoMeta({
       </div>
 
       <div v-else class="text-center py-20">
-        <p class="text-text-secondary text-lg">
+        <p class="text-text-on-dark-muted text-lg">
           No articles found{{ selectedCategory ? ' in this category' : '' }}.
         </p>
         <button

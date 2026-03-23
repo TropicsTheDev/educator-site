@@ -7,7 +7,15 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@nuxt/fonts",
     "@nuxt/image",
+    "@nuxtjs/color-mode",
   ],
+
+  // Color mode — dark as default, class-based switching
+  colorMode: {
+    preference: "dark",
+    fallback: "dark",
+    classSuffix: "",
+  },
 
   // Tailwind CSS v4 via native Vite plugin
   css: ["~/assets/css/main.css"],

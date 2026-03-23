@@ -13,10 +13,10 @@ useSeoMeta({
 <template>
   <div>
     <!-- Hero -->
-    <section class="relative bg-gradient-to-br from-gray-900 to-gray-800 py-20 text-white">
+    <section class="relative bg-gradient-to-br from-surface-overlay to-surface-base py-20 text-text-on-dark">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Portfolio</h1>
-        <p class="text-xl text-gray-300">
+        <p class="text-xl text-text-on-dark-muted">
           Web development projects and technical work
         </p>
       </div>
@@ -35,7 +35,7 @@ useSeoMeta({
 
         <!-- Empty state -->
         <div v-else class="text-center py-20">
-          <p class="text-text-secondary text-lg">
+          <p class="text-text-on-dark-muted text-lg">
             No projects to display yet. Check back soon.
           </p>
         </div>

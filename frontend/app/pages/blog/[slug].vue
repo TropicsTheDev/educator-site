@@ -44,26 +44,26 @@ function formatDate(date: string) {
         <div class="flex items-center gap-3 mb-4">
           <span
             v-if="article.category"
-            class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-royal-purple/10 text-royal-purple"
+            class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-royal-purple/15 text-royal-purple"
           >
             {{ article.category.title }}
           </span>
-          <span v-if="article.publishDate" class="text-sm text-text-secondary">
+          <span v-if="article.publishDate" class="text-sm text-text-on-dark-muted">
             {{ formatDate(article.publishDate) }}
           </span>
         </div>
 
-        <h1 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-text-on-dark mb-4">
           {{ article.title }}
         </h1>
 
-        <p v-if="article.excerpt" class="text-lg text-text-secondary">
+        <p v-if="article.excerpt" class="text-lg text-text-on-dark-muted">
           {{ article.excerpt }}
         </p>
       </header>
 
       <!-- Featured Image -->
-      <div v-if="article.featuredImage" class="mb-10 rounded-lg overflow-hidden">
+      <div v-if="article.featuredImage" class="mb-10 rounded-xl overflow-hidden">
         <img
           :src="article.featuredImage"
           :alt="article.title"

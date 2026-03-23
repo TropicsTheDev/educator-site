@@ -80,7 +80,7 @@ onUnmounted(() => {
     :href="calendlyUrl"
     target="_blank"
     rel="noopener noreferrer"
-    class="inline-flex items-center gap-2 px-6 py-3 bg-royal-purple text-white font-medium rounded-md hover:bg-royal-purple/90 transition-colors"
+    class="inline-flex items-center gap-2 px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/90 hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300"
     :class="{ 'opacity-70 cursor-wait': state === 'loading' }"
     @click="handleClick"
     @mouseenter="preloadCalendlyCSS"

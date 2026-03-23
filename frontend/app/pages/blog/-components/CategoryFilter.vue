@@ -13,10 +13,10 @@ const emit = defineEmits<{
   <div class="flex flex-wrap gap-2">
     <button
       :class="[
-        'px-4 py-2 rounded-full text-sm font-medium transition-colors',
+        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
         modelValue === ''
           ? 'bg-royal-purple text-white'
-          : 'bg-royal-purple/5 text-text-secondary hover:bg-royal-purple/10',
+          : 'bg-surface-raised text-text-on-dark-muted hover:bg-surface-overlay hover:text-text-on-dark',
       ]"
       @click="emit('update:modelValue', '')"
     >
@@ -26,10 +26,10 @@ const emit = defineEmits<{
       v-for="category in categories"
       :key="category._id"
       :class="[
-        'px-4 py-2 rounded-full text-sm font-medium transition-colors',
+        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
         modelValue === category.slug
           ? 'bg-royal-purple text-white'
-          : 'bg-royal-purple/5 text-text-secondary hover:bg-royal-purple/10',
+          : 'bg-surface-raised text-text-on-dark-muted hover:bg-surface-overlay hover:text-text-on-dark',
       ]"
       @click="emit('update:modelValue', category.slug)"
     >

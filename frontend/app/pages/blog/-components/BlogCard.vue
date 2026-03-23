@@ -22,7 +22,7 @@ function formatDate(date: string) {
 <template>
   <NuxtLink
     :to="`/blog/${article.slug}`"
-    class="group block rounded-lg overflow-hidden bg-white border border-royal-purple/10 shadow-sm hover:shadow-md transition-shadow"
+    class="group block rounded-xl overflow-hidden bg-surface-raised border border-white/5 hover:border-white/10 transition-all duration-300"
   >
     <div v-if="article.featuredImage" class="aspect-video overflow-hidden">
       <img
@@ -33,11 +33,11 @@ function formatDate(date: string) {
     </div>
     <div
       v-else
-      class="aspect-video bg-royal-purple/5 flex items-center justify-center"
+      class="aspect-video bg-surface-overlay flex items-center justify-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-12 w-12 text-royal-purple/20"
+        class="h-12 w-12 text-text-on-dark-faint"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -60,20 +60,20 @@ function formatDate(date: string) {
       <div class="flex items-center gap-3 mb-3">
         <span
           v-if="article.category"
-          class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-royal-purple/10 text-royal-purple"
+          class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-royal-purple/15 text-royal-purple"
         >
           {{ article.category.title }}
         </span>
-        <span v-if="article.publishDate" class="text-xs text-text-secondary">
+        <span v-if="article.publishDate" class="text-xs text-text-on-dark-faint">
           {{ formatDate(article.publishDate) }}
         </span>
       </div>
 
-      <h3 class="text-lg font-bold text-text-primary group-hover:text-royal-purple transition-colors mb-2">
+      <h3 class="text-lg font-bold text-text-on-dark group-hover:text-royal-gold transition-colors duration-300 mb-2">
         {{ article.title }}
       </h3>
 
-      <p v-if="article.excerpt" class="text-sm text-text-secondary line-clamp-3">
+      <p v-if="article.excerpt" class="text-sm text-text-on-dark-muted line-clamp-3">
         {{ article.excerpt }}
       </p>
     </div>

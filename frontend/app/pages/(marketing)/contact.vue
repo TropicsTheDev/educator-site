@@ -12,7 +12,7 @@ useSeoMeta({
 <template>
   <div>
     <!-- Hero -->
-    <section class="relative bg-royal-purple py-20 text-white">
+    <section class="relative bg-gradient-to-br from-royal-purple/20 to-surface-base py-20 text-text-on-dark">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
       </div>
@@ -31,32 +31,32 @@ useSeoMeta({
           <UiSectionHeading title="Contact Info" />
           <div class="space-y-6">
             <div v-if="settings?.email">
-              <h3 class="font-semibold text-text-primary mb-1">Email</h3>
+              <h3 class="font-semibold text-text-on-dark mb-1">Email</h3>
               <a
                 :href="`mailto:${settings.email}`"
-                class="text-royal-purple hover:underline"
+                class="text-royal-gold hover:underline"
               >
                 {{ settings.email }}
               </a>
             </div>
 
             <div v-if="settings?.phone">
-              <h3 class="font-semibold text-text-primary mb-1">Phone</h3>
+              <h3 class="font-semibold text-text-on-dark mb-1">Phone</h3>
               <a
                 :href="`tel:${settings.phone}`"
-                class="text-royal-purple hover:underline"
+                class="text-royal-gold hover:underline"
               >
                 {{ settings.phone }}
               </a>
             </div>
 
             <div v-if="settings?.location">
-              <h3 class="font-semibold text-text-primary mb-1">Location</h3>
-              <p class="text-text-secondary">{{ settings.location }}</p>
+              <h3 class="font-semibold text-text-on-dark mb-1">Location</h3>
+              <p class="text-text-on-dark-muted">{{ settings.location }}</p>
             </div>
 
             <div v-if="settings?.socialLinks?.length">
-              <h3 class="font-semibold text-text-primary mb-3">Social</h3>
+              <h3 class="font-semibold text-text-on-dark mb-3">Social</h3>
               <div class="flex gap-4">
                 <a
                   v-for="link in settings.socialLinks"
@@ -64,7 +64,7 @@ useSeoMeta({
                   :href="link.url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-royal-purple hover:text-royal-gold transition-colors font-medium"
+                  class="text-royal-purple hover:text-royal-gold transition-colors duration-300 font-medium"
                 >
                   {{ link.platform }}
                 </a>
