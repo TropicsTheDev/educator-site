@@ -63,14 +63,16 @@ useSeoMeta({
       </div>
     </section>
 
-    <!-- Intro -->
-    <section class="py-14 md:py-16">
-      <div class="max-w-3xl mx-auto px-4 prose prose-lg max-w-none">
-        <p>
+    <!-- Intro — pull quote -->
+    <section class="py-10 md:py-14">
+      <div class="max-w-2xl mx-auto px-4 text-center">
+        <div class="w-16 h-0.5 bg-royal-gold/40 rounded-full mx-auto mb-6" />
+        <p class="text-lg md:text-xl text-text-on-dark italic leading-relaxed">
           You're not alone — and more important, you're not broken. Traditional Jiu-Jitsu teaching
           often leaves you collecting moves instead of developing real, adaptable skill. My coaching
           takes a different path.
         </p>
+        <div class="w-16 h-0.5 bg-royal-gold/40 rounded-full mx-auto mt-6" />
       </div>
     </section>
 
