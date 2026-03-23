@@ -14,12 +14,8 @@ watch(article, (val) => {
   }
 }, { immediate: true })
 
-const discipline = computed(() => {
-  const slug = article.value?.category?.slug
-  if (slug === 'bjj' || slug === 'jiu-jitsu') return 'bjj'
-  if (slug === 'dance' || slug === 'kiz') return 'kiz'
-  return undefined
-})
+const discipline = computed(() => article.value?.category?.discipline || undefined)
+const { badge: badgeClass, border: borderClass } = useDisciplineColor(discipline)
 
 useSeoFromSanity(computed(() =>
   article.value
@@ -44,7 +40,7 @@ function formatDate(date: string) {
         <div class="flex items-center gap-3 mb-4">
           <span
             v-if="article.category"
-            class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-royal-purple/15 text-royal-purple"
+            :class="['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass]"
           >
             {{ article.category.title }}
           </span>
@@ -63,7 +59,7 @@ function formatDate(date: string) {
       </header>
 
       <!-- Featured Image -->
-      <div v-if="article.featuredImage" class="mb-10 rounded-xl overflow-hidden">
+      <div v-if="article.featuredImage" :class="['mb-10 rounded-xl overflow-hidden border-2', borderClass]">
         <img
           :src="article.featuredImage"
           :alt="article.title"

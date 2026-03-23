@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { Calendar } from '@boxicons/vue'
 
-defineProps<{
+const props = defineProps<{
   article: {
     title: string
     slug: string
     excerpt?: string
     publishDate?: string
     featuredImage?: string
-    category?: { title: string; slug: string }
+    category?: { title: string; slug: string; discipline?: string }
   }
 }>()
+
+const { badge: badgeClass } = useDisciplineColor(computed(() => props.article.category?.discipline))
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString('en-US', {
@@ -62,7 +64,7 @@ function formatDate(date: string) {
       <div class="flex items-center gap-3 mb-3">
         <span
           v-if="article.category"
-          class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-royal-purple/15 text-royal-purple"
+          :class="['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass]"
         >
           {{ article.category.title }}
         </span>

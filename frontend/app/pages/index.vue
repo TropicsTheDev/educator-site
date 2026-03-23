@@ -9,6 +9,14 @@ const testimonials = computed(() => data.value?.testimonials || []);
 const recentPosts = computed(() => data.value?.recentPosts || []);
 const coachName = computed(() => settings.value?.coachName || "");
 
+function getBadgeClass(discipline?: string) {
+  switch (discipline) {
+    case 'bjj': return 'bg-royal-green/15 text-royal-green'
+    case 'kiz': return 'bg-royal-orange/15 text-royal-orange'
+    default: return 'bg-royal-purple/15 text-royal-purple'
+  }
+}
+
 useSeoMeta({
   title: "Empowering Movement. Learning through Perception.",
   description:
@@ -222,7 +230,7 @@ useSeoMeta({
               <div class="p-6">
                 <span
                   v-if="post.category"
-                  class="text-xs font-medium px-2 py-0.5 rounded-full bg-royal-purple/15 text-royal-purple"
+                  :class="['text-xs font-medium px-2 py-0.5 rounded-full', getBadgeClass(post.category?.discipline)]"
                 >
                   {{ post.category.title }}
                 </span>

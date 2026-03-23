@@ -8,7 +8,7 @@ export const articleListQuery = groq`
     excerpt,
     publishDate,
     featuredImage,
-    "category": category->{_id, title, "slug": slug.current}
+    "category": category->{_id, title, "slug": slug.current, discipline}
   }
 `
 
@@ -22,7 +22,7 @@ export const articleDetailQuery = groq`
     publishDate,
     featuredImage,
     seo,
-    "category": category->{_id, title, "slug": slug.current},
+    "category": category->{_id, title, "slug": slug.current, discipline},
     "relatedPosts": *[_type == "article" && category._ref == ^.category._ref && slug.current != $slug][0..2] {
       _id, title, "slug": slug.current, excerpt, featuredImage, publishDate
     }
@@ -37,7 +37,7 @@ export const articlesByCategoryQuery = groq`
     excerpt,
     publishDate,
     featuredImage,
-    "category": category->{_id, title, "slug": slug.current}
+    "category": category->{_id, title, "slug": slug.current, discipline}
   }
 `
 
