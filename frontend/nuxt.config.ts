@@ -38,6 +38,11 @@ export default defineNuxtConfig({
     },
   },
 
+  // Disable og-image — not in use, avoids sharp/WASM overhead at build time
+  ogImage: {
+    enabled: false,
+  },
+
   // SEO — @nuxtjs/seo bundles sitemap, robots, schema.org, og-image, link-checker
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000",
@@ -112,6 +117,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       failOnError: false,
+      concurrency: 1,
     },
   },
 
