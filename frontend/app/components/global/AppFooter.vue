@@ -25,7 +25,7 @@ const currentYear = new Date().getFullYear()
           <h4 class="text-sm font-bold uppercase tracking-wider text-text-on-dark-faint mb-4">Navigate</h4>
           <div class="flex flex-col gap-2">
             <NuxtLink to="/teach/bjj" class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300">BJJ Coaching</NuxtLink>
-            <NuxtLink to="/teach/dance" class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300">Urban Kiz</NuxtLink>
+            <NuxtLink to="/teach/kiz" class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300">Urban Kiz</NuxtLink>
             <NuxtLink to="/blog" class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300">Blog</NuxtLink>
             <NuxtLink to="/about" class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300">About</NuxtLink>
             <NuxtLink to="/contact" class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300">Contact</NuxtLink>

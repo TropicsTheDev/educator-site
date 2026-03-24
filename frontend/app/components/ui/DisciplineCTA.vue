@@ -5,7 +5,7 @@ const props = defineProps<{
   discipline?: string
 }>()
 
-const link = computed(() => props.discipline === 'kiz' ? '/teach/dance' : '/teach/bjj')
+const link = computed(() => props.discipline === 'kiz' ? '/teach/kiz' : '/teach/bjj')
 const disciplineName = computed(() => props.discipline === 'kiz' ? 'Urban Kiz' : 'BJJ')
 </script>
 

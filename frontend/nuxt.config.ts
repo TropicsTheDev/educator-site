@@ -42,8 +42,7 @@ export default defineNuxtConfig({
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000",
     name: "PCT Movement",
-    description:
-      "BJJ and Urban Kiz coaching through Perceptual Control Theory",
+    description: "BJJ and Urban Kiz coaching through Perceptual Control Theory",
   },
 
   // Nuxt Image — Sanity provider for responsive images
@@ -58,14 +57,14 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: "Fraunces",
+        name: "Quicksand",
         provider: "google",
         weights: [400, 500, 600, 700],
         styles: ["normal", "italic"],
         subsets: ["latin"],
       },
       {
-        name: "DM Sans",
+        name: "Oxygen",
         provider: "google",
         weights: [400, 500],
         styles: ["normal", "italic"],
@@ -83,9 +82,10 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { prerender: true },
     "/teach/bjj": { prerender: true },
-    "/teach/dance": { prerender: true },
+    "/teach/kiz": { prerender: true },
     "/bjj": { redirect: "/teach/bjj" },
-    "/dance": { redirect: "/teach/dance" },
+    "/dance": { redirect: "/teach/kiz" },
+    "/teach/dance": { redirect: "/teach/kiz" },
     "/about": { prerender: true },
     "/portfolio": { prerender: true },
     "/blog": { isr: 3600 },

@@ -29,7 +29,7 @@ function toggleColorMode() {
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'BJJ', to: '/teach/bjj' },
-  { label: 'Dance', to: '/teach/dance' },
+  { label: 'Dance', to: '/teach/kiz' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },

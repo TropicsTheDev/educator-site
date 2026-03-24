@@ -7,37 +7,37 @@
   /* ============================================
    * TETRADIC COLOR PALETTE
    * ============================================ */
-  --color-royal-purple: #7851A9;
-  --color-royal-gold: #F9ED6C;
-  --color-royal-green: #49AA83;
-  --color-royal-orange: #F9966C;
+  --color-royal-purple: #7851a9;
+  --color-royal-gold: #f9ed6c;
+  --color-royal-green: #49aa83;
+  --color-royal-orange: #f9966c;
 
   /* ============================================
    * DARK SURFACE HIERARCHY (3-tier elevation)
    * ============================================ */
-  --color-surface-base: #0D0D1A;
-  --color-surface-raised: #16162B;
-  --color-surface-overlay: #1E1E38;
+  --color-surface-base: #0d0d1a;
+  --color-surface-raised: #16162b;
+  --color-surface-overlay: #1e1e38;
 
   /* Light mode surfaces */
-  --color-surface-light: #FAFAF8;
-  --color-surface-white: #FFFFFF;
-  --color-surface-dark: #1A1A2E;
+  --color-surface-light: #fafaf8;
+  --color-surface-white: #ffffff;
+  --color-surface-dark: #1a1a2e;
 
   /* ============================================
    * TEXT COLORS
    * ============================================ */
-  --color-text-on-dark: #E8E6F0;
-  --color-text-on-dark-muted: #9896A8;
-  --color-text-on-dark-faint: #5C5A6E;
-  --color-text-primary: #1A1A2E;
-  --color-text-secondary: #4A4A68;
+  --color-text-on-dark: #e8e6f0;
+  --color-text-on-dark-muted: #9896a8;
+  --color-text-on-dark-faint: #5c5a6e;
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #4a4a68;
 
   /* ============================================
    * TYPOGRAPHY
    * ============================================ */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: "Quicksand", system-ui, sans-serif;
+  --font-body: "Oxygen", system-ui, sans-serif;
 
   --leading-tight: 1.1;
   --leading-snug: 1.2;
@@ -67,7 +67,10 @@
     line-height: 1.5;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-optical-sizing: auto;
   }
@@ -79,7 +82,7 @@
  * the "flat digital screen" feel.
  * ============================================ */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -100,7 +103,7 @@ body::before {
   overflow: hidden;
 }
 .hero-glow::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -138,19 +141,19 @@ body::before {
  * DARK PROSE OVERRIDES
  * ============================================ */
 .dark .prose {
-  --tw-prose-body: #E8E6F0;
-  --tw-prose-headings: #E8E6F0;
-  --tw-prose-lead: #9896A8;
-  --tw-prose-links: #7851A9;
-  --tw-prose-bold: #E8E6F0;
-  --tw-prose-counters: #9896A8;
-  --tw-prose-bullets: #F9ED6C;
+  --tw-prose-body: #e8e6f0;
+  --tw-prose-headings: #e8e6f0;
+  --tw-prose-lead: #9896a8;
+  --tw-prose-links: #7851a9;
+  --tw-prose-bold: #e8e6f0;
+  --tw-prose-counters: #9896a8;
+  --tw-prose-bullets: #f9ed6c;
   --tw-prose-hr: rgba(255, 255, 255, 0.1);
-  --tw-prose-quotes: #F9ED6C;
-  --tw-prose-quote-borders: #7851A9;
-  --tw-prose-code: #F9966C;
-  --tw-prose-pre-code: #E8E6F0;
-  --tw-prose-pre-bg: #16162B;
+  --tw-prose-quotes: #f9ed6c;
+  --tw-prose-quote-borders: #7851a9;
+  --tw-prose-code: #f9966c;
+  --tw-prose-pre-code: #e8e6f0;
+  --tw-prose-pre-bg: #16162b;
   --tw-prose-th-borders: rgba(255, 255, 255, 0.1);
   --tw-prose-td-borders: rgba(255, 255, 255, 0.05);
 }

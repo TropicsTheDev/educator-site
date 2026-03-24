@@ -59,7 +59,7 @@ useSeoMeta({
                 Explore BJJ
               </NuxtLink>
               <NuxtLink
-                to="/teach/dance"
+                to="/teach/kiz"
                 class="inline-block px-8 py-3 border border-royal-orange/30 text-royal-orange rounded-xl hover:bg-royal-orange/10 transition-all duration-300"
               >
                 Explore Urban Kiz
@@ -143,7 +143,7 @@ useSeoMeta({
 
           <!-- Urban Kiz Card -->
           <NuxtLink
-            to="/teach/dance"
+            to="/teach/kiz"
             class="bg-surface-raised rounded-xl p-8 border border-royal-orange/15 hover:border-royal-orange/30 transition-all duration-300 group"
           >
             <Music class="w-8 h-8 text-royal-orange/60 mb-3" />

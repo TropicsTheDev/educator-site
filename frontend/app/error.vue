@@ -26,7 +26,7 @@ const is404 = computed(() => error.value?.statusCode === 404)
           <NuxtLink to="/teach/bjj" class="px-6 py-3 border border-white/10 text-text-on-dark-muted rounded-xl font-medium hover:border-white/20 hover:text-text-on-dark transition-all duration-300">
             BJJ
           </NuxtLink>
-          <NuxtLink to="/teach/dance" class="px-6 py-3 border border-white/10 text-text-on-dark-muted rounded-xl font-medium hover:border-white/20 hover:text-text-on-dark transition-all duration-300">
+          <NuxtLink to="/teach/kiz" class="px-6 py-3 border border-white/10 text-text-on-dark-muted rounded-xl font-medium hover:border-white/20 hover:text-text-on-dark transition-all duration-300">
             Urban Kiz
           </NuxtLink>
           <NuxtLink to="/portfolio" class="px-6 py-3 border border-white/10 text-text-on-dark-muted rounded-xl font-medium hover:border-white/20 hover:text-text-on-dark transition-all duration-300">
