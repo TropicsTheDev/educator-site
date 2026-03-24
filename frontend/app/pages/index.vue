@@ -11,14 +11,17 @@ const coachName = computed(() => settings.value?.coachName || "");
 
 function getBadgeClass(discipline?: string) {
   switch (discipline) {
-    case 'bjj': return 'bg-royal-green/15 text-royal-green'
-    case 'kiz': return 'bg-royal-orange/15 text-royal-orange'
-    default: return 'bg-royal-purple/15 text-royal-purple'
+    case "bjj":
+      return "bg-royal-green/15 text-royal-green";
+    case "kiz":
+      return "bg-royal-orange/15 text-royal-orange";
+    default:
+      return "bg-royal-purple/15 text-royal-purple";
   }
 }
 
 useSeoMeta({
-  title: "Empowering Movement. Learning through Perception.",
+  title: "Where movement meets curiosity",
   description:
     "I coach Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory and the Iterative Reorganization Method.",
   ogTitle: "Empowering Movement. Learning through Perception.",
@@ -38,15 +41,15 @@ useSeoMeta({
           <!-- Text -->
           <div class="flex-1 text-center md:text-left">
             <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              Empowering Movement.<br />Learning through Perception.
+              Where movement meets curiosity
             </h1>
             <p
               class="text-lg text-text-on-dark-muted leading-relaxed mb-8 max-w-xl"
             >
-              <template v-if="coachName">I'm {{ coachName }}. </template>I coach
-              Brazilian Jiu-Jitsu and Urban Kiz using Perceptual Control Theory
-              (PCT) and the Constraints-Led Approach. Together, we'll explore
-              <em>why</em> you move, not just <em>how</em> — so you can adapt,
+              <template v-if="coachName">I'm {{ coachName }}!</template>
+              I guide people through Brazilian Jiu Jitsu and Urban Kiz with a
+              focus on awareness, perception, and self-discovery. Together,
+              we’ll uncover the patterns you love in movement—so you can adapt,
               create, and find your flow.
             </p>
             <div
@@ -230,7 +233,10 @@ useSeoMeta({
               <div class="p-6">
                 <span
                   v-if="post.category"
-                  :class="['text-xs font-medium px-2 py-0.5 rounded-full', getBadgeClass(post.category?.discipline)]"
+                  :class="[
+                    'text-xs font-medium px-2 py-0.5 rounded-full',
+                    getBadgeClass(post.category?.discipline),
+                  ]"
                 >
                   {{ post.category.title }}
                 </span>
