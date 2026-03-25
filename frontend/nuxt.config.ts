@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   primevue: {
     autoImport: true,
     components: {
-      include: ['Button', 'InputText', 'Textarea', 'Message', 'Toast', 'Tag'],
+      include: ["Button", "InputText", "Textarea", "Message", "Toast", "Tag"],
     },
     options: {
       unstyled: true,
@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   // SEO — @nuxtjs/seo bundles sitemap, robots, schema.org, og-image, link-checker
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000",
-    name: "PCT Movement",
+    name: "Tropical Movement Space",
     description: "BJJ and Urban Kiz coaching through Perceptual Control Theory",
   },
 
