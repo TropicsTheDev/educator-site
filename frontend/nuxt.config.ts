@@ -30,9 +30,12 @@ export default defineNuxtConfig({
     apiVersion: "2026-03-01",
   },
 
-  // PrimeVue unstyled mode — Tailwind handles all styling via passthrough
+  // PrimeVue unstyled mode — explicit component list keeps build memory low
   primevue: {
     autoImport: true,
+    components: {
+      include: ['Button', 'InputText', 'Textarea', 'Message', 'Toast', 'Tag'],
+    },
     options: {
       unstyled: true,
     },

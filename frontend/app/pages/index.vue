@@ -231,15 +231,11 @@ useSeoMeta({
               class="bg-surface-raised rounded-xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-300"
             >
               <div class="p-6">
-                <span
+                <Tag
                   v-if="post.category"
-                  :class="[
-                    'text-xs font-medium px-2 py-0.5 rounded-full',
-                    getBadgeClass(post.category?.discipline),
-                  ]"
-                >
-                  {{ post.category.title }}
-                </span>
+                  :value="post.category.title"
+                  :pt="{ root: { class: ['text-xs font-medium px-2 py-0.5 rounded-full', getBadgeClass(post.category?.discipline)] } }"
+                />
                 <h3 class="text-lg font-semibold text-text-on-dark mt-3 mb-2">
                   {{ post.title }}
                 </h3>

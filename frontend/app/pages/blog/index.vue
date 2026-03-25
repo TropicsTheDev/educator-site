@@ -49,13 +49,13 @@ useSeoMeta({
         <p class="text-text-on-dark-muted text-lg">
           No articles found{{ selectedCategory ? ' in this category' : '' }}.
         </p>
-        <button
+        <Button
           v-if="selectedCategory"
-          class="mt-4 text-royal-purple font-medium hover:underline"
+          :pt="{ root: { class: 'mt-4 text-royal-purple font-medium hover:underline' } }"
           @click="selectedCategory = ''"
         >
           View all articles
-        </button>
+        </Button>
       </div>
     </div>
   </div>

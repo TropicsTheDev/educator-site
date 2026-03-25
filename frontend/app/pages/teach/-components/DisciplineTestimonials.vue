@@ -12,7 +12,10 @@ defineProps<{
         <UiTestimonialCard
           v-for="testimonial in testimonials"
           :key="(testimonial._id as string)"
-          :testimonial="testimonial"
+          :student-name="(testimonial.studentName as string)"
+          :discipline="(testimonial.discipline as string | undefined)"
+          :quote="(testimonial.quote as string)"
+          :photo="testimonial.photo"
         />
       </div>
     </div>

@@ -34,13 +34,20 @@ async function handleSubmit() {
 <template>
   <div>
     <!-- Success message -->
-    <div
+    <Message
       v-if="formState === 'success'"
-      class="rounded-xl bg-royal-green/10 border border-royal-green/20 p-6 text-center"
+      severity="success"
+      :closable="false"
+      :pt="{
+        root: { class: 'rounded-xl bg-royal-green/10 border border-royal-green/20 p-6 text-center' },
+        icon: { class: 'hidden' },
+      }"
     >
-      <p class="text-royal-green font-semibold text-lg mb-1">Message sent!</p>
-      <p class="text-royal-green">Thank you for reaching out. I'll get back to you soon.</p>
-    </div>
+      <div>
+        <p class="text-royal-green font-semibold text-lg mb-1">Message sent!</p>
+        <p class="text-royal-green">Thank you for reaching out. I'll get back to you soon.</p>
+      </div>
+    </Message>
 
     <!-- Form -->
     <form v-else @submit.prevent="handleSubmit" class="space-y-6">
@@ -60,13 +67,14 @@ async function handleSubmit() {
         <label for="contact-name" class="block text-sm font-medium text-text-on-dark mb-1">
           Name <span class="text-red-500">*</span>
         </label>
-        <input
+        <InputText
           id="contact-name"
           v-model="form.name"
           type="text"
           required
-          class="w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint
-                 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5"
+          :pt="{
+            root: { class: 'w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5' }
+          }"
           placeholder="Your name"
         />
       </div>
@@ -75,13 +83,14 @@ async function handleSubmit() {
         <label for="contact-email" class="block text-sm font-medium text-text-on-dark mb-1">
           Email <span class="text-red-500">*</span>
         </label>
-        <input
+        <InputText
           id="contact-email"
           v-model="form.email"
           type="email"
           required
-          class="w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint
-                 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5"
+          :pt="{
+            root: { class: 'w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5' }
+          }"
           placeholder="your@email.com"
         />
       </div>
@@ -91,35 +100,45 @@ async function handleSubmit() {
           Message <span class="text-red-500">*</span>
           <span class="text-text-on-dark-muted font-normal">(min 10 characters)</span>
         </label>
-        <textarea
+        <Textarea
           id="contact-message"
           v-model="form.message"
           required
-          rows="5"
-          class="w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint
-                 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5 resize-y"
+          :rows="5"
+          :pt="{
+            root: { class: 'w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5 resize-y' }
+          }"
           placeholder="How can I help you?"
         />
       </div>
 
       <!-- Error message -->
-      <div
+      <Message
         v-if="formState === 'error'"
-        class="rounded-xl bg-royal-orange/10 border border-royal-orange/20 p-4"
+        severity="error"
+        :closable="false"
+        :pt="{
+          root: { class: 'rounded-xl bg-royal-orange/10 border border-royal-orange/20 p-4' },
+          icon: { class: 'hidden' },
+        }"
       >
         <p class="text-royal-orange text-sm">{{ errorMessage }}</p>
-      </div>
+      </Message>
 
-      <button
+      <Button
         type="submit"
         :disabled="formState === 'submitting'"
-        class="w-full rounded-xl bg-royal-purple px-6 py-3 text-white font-semibold
-               hover:bg-royal-purple/90 hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
-               flex items-center justify-center gap-2"
+        :pt="{
+          root: { class: 'w-full rounded-xl bg-royal-purple px-6 py-3 text-white font-semibold hover:bg-royal-purple/90 hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2' }
+        }"
       >
+        <svg v-if="formState === 'submitting'" class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+        </svg>
         {{ formState === 'submitting' ? 'Sending...' : 'Send Message' }}
         <Send v-if="formState !== 'submitting'" class="w-4 h-4" />
-      </button>
+      </Button>
     </form>
   </div>
 </template>

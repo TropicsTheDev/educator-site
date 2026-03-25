@@ -36,12 +36,11 @@ const badgeClass = computed(() => {
       </div>
       <div>
         <span class="font-medium text-sm text-text-on-dark">{{ studentName }}</span>
-        <span
+        <Tag
           v-if="discipline"
-          :class="['ml-2 text-xs px-2 py-0.5 rounded-full font-medium', badgeClass]"
-        >
-          {{ disciplineLabel }}
-        </span>
+          :value="disciplineLabel"
+          :pt="{ root: { class: ['ml-2 text-xs px-2 py-0.5 rounded-full font-medium', badgeClass] } }"
+        />
       </div>
     </div>
   </div>

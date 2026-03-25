@@ -43,13 +43,12 @@ defineProps<{
 
       <!-- Tech stack -->
       <div v-if="project.techStack?.length" class="flex flex-wrap gap-2 mb-4">
-        <span
+        <Tag
           v-for="tech in project.techStack"
           :key="tech"
-          class="text-xs font-medium px-2.5 py-1 rounded-full bg-surface-overlay text-text-on-dark-muted"
-        >
-          {{ tech }}
-        </span>
+          :value="tech"
+          :pt="{ root: { class: 'text-xs font-medium px-2.5 py-1 rounded-full bg-surface-overlay text-text-on-dark-muted' } }"
+        />
       </div>
 
       <!-- Links -->

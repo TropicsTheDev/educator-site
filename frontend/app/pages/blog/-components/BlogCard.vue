@@ -62,12 +62,11 @@ function formatDate(date: string) {
 
     <div class="p-5">
       <div class="flex items-center gap-3 mb-3">
-        <span
+        <Tag
           v-if="article.category"
-          :class="['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass]"
-        >
-          {{ article.category.title }}
-        </span>
+          :value="article.category.title"
+          :pt="{ root: { class: ['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass] } }"
+        />
         <span v-if="article.publishDate" class="text-xs text-text-on-dark-faint flex items-center gap-1.5">
           <Calendar class="w-3.5 h-3.5 shrink-0" />
           {{ formatDate(article.publishDate) }}

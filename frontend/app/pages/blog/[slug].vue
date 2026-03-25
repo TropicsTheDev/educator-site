@@ -32,12 +32,11 @@ function formatDate(date: string) {
       <!-- Header -->
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span
+          <Tag
             v-if="article.category"
-            :class="['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass]"
-          >
-            {{ article.category.title }}
-          </span>
+            :value="article.category.title"
+            :pt="{ root: { class: ['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass] } }"
+          />
           <span v-if="article.publishDate" class="text-sm text-text-on-dark-muted">
             {{ formatDate(article.publishDate) }}
           </span>

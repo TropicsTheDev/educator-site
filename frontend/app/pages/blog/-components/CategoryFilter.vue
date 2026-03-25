@@ -11,29 +11,35 @@ const emit = defineEmits<{
 
 <template>
   <div class="flex flex-wrap gap-2">
-    <button
-      :class="[
-        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
-        modelValue === ''
-          ? 'bg-royal-purple text-white'
-          : 'bg-surface-raised text-text-on-dark-muted hover:bg-surface-overlay hover:text-text-on-dark',
-      ]"
+    <Button
+      :pt="{
+        root: {
+          class: ['px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
+            modelValue === ''
+              ? 'bg-royal-purple text-white'
+              : 'bg-surface-raised text-text-on-dark-muted hover:bg-surface-overlay hover:text-text-on-dark'
+          ]
+        }
+      }"
       @click="emit('update:modelValue', '')"
     >
       All
-    </button>
-    <button
+    </Button>
+    <Button
       v-for="category in categories"
       :key="category._id"
-      :class="[
-        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
-        modelValue === category.slug
-          ? 'bg-royal-purple text-white'
-          : 'bg-surface-raised text-text-on-dark-muted hover:bg-surface-overlay hover:text-text-on-dark',
-      ]"
+      :pt="{
+        root: {
+          class: ['px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
+            modelValue === category.slug
+              ? 'bg-royal-purple text-white'
+              : 'bg-surface-raised text-text-on-dark-muted hover:bg-surface-overlay hover:text-text-on-dark'
+          ]
+        }
+      }"
       @click="emit('update:modelValue', category.slug)"
     >
       {{ category.title }}
-    </button>
+    </Button>
   </div>
 </template>

@@ -59,25 +59,23 @@ const navLinks = [
         </nav>
 
         <!-- Color mode toggle -->
-        <button
-          class="p-2 text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+        <Button
+          :pt="{ root: { class: 'p-2 text-text-on-dark-muted hover:text-royal-gold transition-all duration-300' } }"
           aria-label="Toggle color mode"
           @click="toggleColorMode"
         >
-          <!-- Sun icon (shown in dark mode → click to go light) -->
           <Sun v-if="colorMode.value === 'dark'" class="w-5 h-5" />
-          <!-- Moon icon (shown in light mode → click to go dark) -->
           <Moon v-else class="w-5 h-5" />
-        </button>
+        </Button>
 
         <!-- Mobile hamburger -->
-        <button
-          class="md:hidden p-2 text-text-on-dark hover:text-royal-gold transition-all duration-300"
+        <Button
+          :pt="{ root: { class: 'md:hidden p-2 text-text-on-dark hover:text-royal-gold transition-all duration-300' } }"
           aria-label="Open menu"
           @click="sidebarVisible = true"
         >
           <Menu class="w-6 h-6" />
-        </button>
+        </Button>
       </div>
     </div>
 
@@ -87,13 +85,13 @@ const navLinks = [
         <div v-if="sidebarVisible" class="fixed inset-0 z-[100]">
           <div class="absolute inset-0 bg-black/50" @click="sidebarVisible = false" />
           <nav class="absolute right-0 top-0 h-full w-72 bg-surface-raised p-6 flex flex-col" aria-label="Mobile navigation">
-            <button
-              class="self-end p-2 text-text-on-dark-muted hover:text-royal-gold mb-8 transition-all duration-300"
+            <Button
+              :pt="{ root: { class: 'self-end p-2 text-text-on-dark-muted hover:text-royal-gold mb-8 transition-all duration-300' } }"
               aria-label="Close menu"
               @click="sidebarVisible = false"
             >
               <X class="w-6 h-6" />
-            </button>
+            </Button>
             <NuxtLink
               v-for="(link, index) in navLinks"
               :key="link.to"
