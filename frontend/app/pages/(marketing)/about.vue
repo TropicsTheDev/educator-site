@@ -3,6 +3,7 @@ import { Medal, Brain } from '@boxicons/vue'
 import { aboutPageQuery } from '~/queries/site.queries'
 
 const { data: aboutData } = useSanityQuery(aboutPageQuery)
+const sanityComponents = useSanityComponents()
 
 useSeoMeta({
   title: 'About',
@@ -37,7 +38,7 @@ useSchemaOrg([
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Bio" />
         <div v-if="aboutData?.bio" class="prose prose-lg max-w-none text-text-muted">
-          <SanityContent :value="aboutData.bio" />
+          <SanityContent :value="aboutData.bio" :components="sanityComponents" />
         </div>
       </div>
     </section>
@@ -49,7 +50,7 @@ useSchemaOrg([
           <template #icon><Brain class="w-6 h-6 text-royal-purple" /></template>
         </UiSectionHeading>
         <div class="prose prose-lg max-w-none text-text-muted">
-          <SanityContent :value="aboutData.methodologyDescription" />
+          <SanityContent :value="aboutData.methodologyDescription" :components="sanityComponents" />
         </div>
       </div>
     </section>

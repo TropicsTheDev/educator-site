@@ -1,27 +1,34 @@
 <script setup lang="ts">
-import { ArrowRight } from '@boxicons/vue'
+import { ArrowRight } from "@boxicons/vue";
 
 const props = defineProps<{
-  discipline?: string
-}>()
+  discipline?: string;
+}>();
 
-const link = computed(() => props.discipline === 'kiz' ? '/teach/kiz' : '/teach/bjj')
-const disciplineName = computed(() => props.discipline === 'kiz' ? 'Urban Kiz' : 'BJJ')
+const link = computed(() =>
+  props.discipline === "kiz" ? "/teach/kiz" : "/teach/bjj",
+);
+const disciplineName = computed(() =>
+  props.discipline === "kiz" ? "Urban Kiz" : "BJJ",
+);
 </script>
 
 <template>
-  <div class="mt-12 p-8 bg-surface-raised rounded-xl border border-border-theme text-center">
+  <div
+    class="mt-12 p-8 bg-surface-raised rounded-xl border border-border-theme text-center"
+  >
     <h3 class="text-xl font-bold text-text-main mb-2">
-      Interested in {{ disciplineName }} coaching?
+      Interested in {{ disciplineName }} lessons?
     </h3>
     <p class="text-text-muted mb-6">
-      Learn how Perceptual Control Theory can transform your {{ disciplineName }} practice.
+      Learn how Perceptual Control Theory can transform your
+      {{ disciplineName }} learning.
     </p>
     <NuxtLink
       :to="link"
       class="inline-flex items-center gap-2 px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/90 hover:shadow-[0_0_20px_rgba(120,81,169,0.3)] transition-all duration-300"
     >
-      Explore {{ disciplineName }} Coaching
+      Explore {{ disciplineName }}
       <ArrowRight class="w-4 h-4" />
     </NuxtLink>
   </div>

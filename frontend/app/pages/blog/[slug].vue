@@ -7,6 +7,7 @@ const route = useRoute()
 const { data } = useSanityQuery(articleDetailQuery, { slug: route.params.slug })
 
 const article = computed(() => data.value)
+const sanityComponents = useSanityComponents()
 
 const discipline = computed(() => article.value?.category?.discipline || undefined)
 const { badge: badgeClass, border: borderClass } = useDisciplineColor(discipline)
@@ -62,7 +63,7 @@ function formatDate(date: string) {
 
       <!-- Body -->
       <div class="prose prose-lg max-w-none">
-        <SanityContent :value="article.body" />
+        <SanityContent :value="article.body" :components="sanityComponents" />
       </div>
 
       <!-- Discipline CTA -->

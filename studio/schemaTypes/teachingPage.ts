@@ -51,6 +51,9 @@ export default defineType({
           options: { hotspot: true },
           fields: [{ name: 'alt', type: 'string', title: 'Alt text' }],
         },
+        {
+          type: 'table',
+        },
       ],
     }),
     defineField({

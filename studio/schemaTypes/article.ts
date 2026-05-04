@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'article',
@@ -15,7 +15,7 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: { source: 'title' },
+      options: {source: 'title'},
     }),
     defineField({
       name: 'excerpt',
@@ -35,15 +35,18 @@ export default defineType({
               {
                 name: 'link',
                 type: 'object',
-                fields: [{ name: 'href', type: 'url' }],
+                fields: [{name: 'href', type: 'url'}],
               },
             ],
           },
         },
         {
           type: 'image',
-          options: { hotspot: true },
-          fields: [{ name: 'alt', type: 'string', title: 'Alt text' }],
+          options: {hotspot: true},
+          fields: [{name: 'alt', type: 'string', title: 'Alt text'}],
+        },
+        {
+          type: 'table',
         },
       ],
     }),
@@ -51,7 +54,7 @@ export default defineType({
       name: 'category',
       title: 'Category',
       type: 'reference',
-      to: [{ type: 'category' }],
+      to: [{type: 'category'}],
     }),
     defineField({
       name: 'publishDate',
@@ -62,7 +65,7 @@ export default defineType({
       name: 'featuredImage',
       title: 'Featured Image',
       type: 'image',
-      options: { hotspot: true },
+      options: {hotspot: true},
       fields: [
         defineField({
           name: 'alt',
