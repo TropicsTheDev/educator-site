@@ -63,7 +63,7 @@ function formatDate(date: string) {
 
       <!-- Body -->
       <div class="prose prose-lg max-w-none">
-        <SanityContent :value="article.body" :components="sanityComponents" />
+        <SanityContent :value="article.body" :components="sanityComponents" :serializers="sanityComponents" />
       </div>
 
       <!-- Discipline CTA -->

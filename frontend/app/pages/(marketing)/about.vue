@@ -38,7 +38,7 @@ useSchemaOrg([
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Bio" />
         <div v-if="aboutData?.bio" class="prose prose-lg max-w-none text-text-muted">
-          <SanityContent :value="aboutData.bio" :components="sanityComponents" />
+          <SanityContent :value="aboutData.bio" :components="sanityComponents" :serializers="sanityComponents" />
         </div>
       </div>
     </section>
@@ -50,7 +50,7 @@ useSchemaOrg([
           <template #icon><Brain class="w-6 h-6 text-royal-purple" /></template>
         </UiSectionHeading>
         <div class="prose prose-lg max-w-none text-text-muted">
-          <SanityContent :value="aboutData.methodologyDescription" :components="sanityComponents" />
+          <SanityContent :value="aboutData.methodologyDescription" :components="sanityComponents" :serializers="sanityComponents" />
         </div>
       </div>
     </section>
