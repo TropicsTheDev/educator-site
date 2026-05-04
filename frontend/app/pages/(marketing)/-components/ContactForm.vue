@@ -64,7 +64,7 @@ async function handleSubmit() {
       </div>
 
       <div>
-        <label for="contact-name" class="block text-sm font-medium text-text-on-dark mb-1">
+        <label for="contact-name" class="block text-sm font-medium text-text-main mb-1">
           Name <span class="text-red-500">*</span>
         </label>
         <InputText
@@ -73,14 +73,14 @@ async function handleSubmit() {
           type="text"
           required
           :pt="{
-            root: { class: 'w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5' }
+            root: { class: 'w-full bg-surface-raised border border-border-theme text-text-main placeholder:text-text-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5' }
           }"
           placeholder="Your name"
         />
       </div>
 
       <div>
-        <label for="contact-email" class="block text-sm font-medium text-text-on-dark mb-1">
+        <label for="contact-email" class="block text-sm font-medium text-text-main mb-1">
           Email <span class="text-red-500">*</span>
         </label>
         <InputText
@@ -89,16 +89,16 @@ async function handleSubmit() {
           type="email"
           required
           :pt="{
-            root: { class: 'w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5' }
+            root: { class: 'w-full bg-surface-raised border border-border-theme text-text-main placeholder:text-text-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5' }
           }"
           placeholder="your@email.com"
         />
       </div>
 
       <div>
-        <label for="contact-message" class="block text-sm font-medium text-text-on-dark mb-1">
+        <label for="contact-message" class="block text-sm font-medium text-text-main mb-1">
           Message <span class="text-red-500">*</span>
-          <span class="text-text-on-dark-muted font-normal">(min 10 characters)</span>
+          <span class="text-text-muted font-normal">(min 10 characters)</span>
         </label>
         <Textarea
           id="contact-message"
@@ -106,7 +106,7 @@ async function handleSubmit() {
           required
           :rows="5"
           :pt="{
-            root: { class: 'w-full bg-surface-raised border border-white/10 text-text-on-dark placeholder:text-text-on-dark-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5 resize-y' }
+            root: { class: 'w-full bg-surface-raised border border-border-theme text-text-main placeholder:text-text-faint focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20 rounded-xl outline-none transition-all duration-300 px-4 py-2.5 resize-y' }
           }"
           placeholder="How can I help you?"
         />

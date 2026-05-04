@@ -37,16 +37,16 @@ function formatDate(date: string) {
             :value="article.category.title"
             :pt="{ root: { class: ['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass] } }"
           />
-          <span v-if="article.publishDate" class="text-sm text-text-on-dark-muted">
+          <span v-if="article.publishDate" class="text-sm text-text-muted">
             {{ formatDate(article.publishDate) }}
           </span>
         </div>
 
-        <h1 class="text-3xl md:text-4xl font-bold text-text-on-dark mb-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-text-main mb-4">
           {{ article.title }}
         </h1>
 
-        <p v-if="article.excerpt" class="text-lg text-text-on-dark-muted">
+        <p v-if="article.excerpt" class="text-lg text-text-muted">
           {{ article.excerpt }}
         </p>
       </header>

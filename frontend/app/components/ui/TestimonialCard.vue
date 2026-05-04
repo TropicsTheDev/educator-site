@@ -26,8 +26,8 @@ const badgeClass = computed(() => {
 </script>
 
 <template>
-  <div :class="['bg-surface-raised rounded-xl p-6 border border-white/5 hover:border-white/10 transition-all duration-300', leftBorderClass]">
-    <blockquote class="text-text-on-dark italic leading-relaxed mb-4">
+  <div :class="['bg-surface-raised rounded-xl p-6 border border-border-theme hover:border-border-theme transition-all duration-300', leftBorderClass]">
+    <blockquote class="text-text-main italic leading-relaxed mb-4">
       "{{ quote }}"
     </blockquote>
     <div class="flex items-center gap-3">
@@ -35,7 +35,7 @@ const badgeClass = computed(() => {
         <SanityImage :asset-id="photo?.asset?._ref" class="w-full h-full object-cover" />
       </div>
       <div>
-        <span class="font-medium text-sm text-text-on-dark">{{ studentName }}</span>
+        <span class="font-medium text-sm text-text-main">{{ studentName }}</span>
         <Tag
           v-if="discipline"
           :value="disciplineLabel"

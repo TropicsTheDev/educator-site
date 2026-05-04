@@ -20,7 +20,7 @@ useSchemaOrg([
 <template>
   <div>
     <!-- Hero -->
-    <section class="hero-glow relative bg-gradient-to-br from-royal-purple/20 to-surface-base py-20 text-text-on-dark">
+    <section class="hero-glow relative bg-gradient-to-br from-royal-purple/20 to-surface-base py-20 text-text-main">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">About</h1>
       </div>
@@ -36,7 +36,7 @@ useSchemaOrg([
     <section class="py-16">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Bio" />
-        <div v-if="aboutData?.bio" class="prose prose-lg max-w-none text-text-on-dark-muted">
+        <div v-if="aboutData?.bio" class="prose prose-lg max-w-none text-text-muted">
           <SanityContent :value="aboutData.bio" />
         </div>
       </div>
@@ -48,7 +48,7 @@ useSchemaOrg([
         <UiSectionHeading title="Methodology">
           <template #icon><Brain class="w-6 h-6 text-royal-purple" /></template>
         </UiSectionHeading>
-        <div class="prose prose-lg max-w-none text-text-on-dark-muted">
+        <div class="prose prose-lg max-w-none text-text-muted">
           <SanityContent :value="aboutData.methodologyDescription" />
         </div>
       </div>
@@ -67,7 +67,7 @@ useSchemaOrg([
             class="flex items-start gap-3"
           >
             <span class="mt-1 flex-shrink-0 h-2 w-2 rounded-full bg-royal-gold" />
-            <span class="text-text-on-dark-muted text-lg">{{ credential }}</span>
+            <span class="text-text-muted text-lg">{{ credential }}</span>
           </li>
         </ul>
       </div>

@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
 
 <template>
   <footer
-    class="bg-surface-base border-t border-white/5 text-text-on-dark py-16"
+    class="bg-surface-base border-t border-border-theme text-text-main py-16"
   >
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-12">
@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear();
           <h3 class="text-lg font-bold text-royal-gold mb-4">
             {{ settings?.siteTitle || "PCT Movement" }}
           </h3>
-          <p class="text-text-on-dark-muted text-sm leading-relaxed">
+          <p class="text-text-muted text-sm leading-relaxed">
             A space to move, explore, and grow.
           </p>
         </div>
@@ -25,34 +25,34 @@ const currentYear = new Date().getFullYear();
         <!-- Quick links -->
         <div>
           <h4
-            class="text-sm font-bold uppercase tracking-wider text-text-on-dark-faint mb-4"
+            class="text-sm font-bold uppercase tracking-wider text-text-faint mb-4"
           >
             Navigate
           </h4>
           <div class="flex flex-col gap-2">
             <NuxtLink
               to="/teach/bjj"
-              class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+              class="text-sm text-text-muted hover:text-royal-gold transition-all duration-300"
               >BJJ Coaching</NuxtLink
             >
             <NuxtLink
               to="/teach/kiz"
-              class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+              class="text-sm text-text-muted hover:text-royal-gold transition-all duration-300"
               >Urban Kiz</NuxtLink
             >
             <NuxtLink
               to="/blog"
-              class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+              class="text-sm text-text-muted hover:text-royal-gold transition-all duration-300"
               >Blog</NuxtLink
             >
             <NuxtLink
               to="/about"
-              class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+              class="text-sm text-text-muted hover:text-royal-gold transition-all duration-300"
               >About</NuxtLink
             >
             <NuxtLink
               to="/contact"
-              class="text-sm text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+              class="text-sm text-text-muted hover:text-royal-gold transition-all duration-300"
               >Contact</NuxtLink
             >
           </div>
@@ -61,11 +61,11 @@ const currentYear = new Date().getFullYear();
         <!-- Contact -->
         <div>
           <h4
-            class="text-sm font-bold uppercase tracking-wider text-text-on-dark-faint mb-4"
+            class="text-sm font-bold uppercase tracking-wider text-text-faint mb-4"
           >
             Contact
           </h4>
-          <div class="flex flex-col gap-2 text-sm text-text-on-dark-muted">
+          <div class="flex flex-col gap-2 text-sm text-text-muted">
             <a
               v-if="settings?.email"
               :href="`mailto:${settings.email}`"
@@ -82,7 +82,7 @@ const currentYear = new Date().getFullYear();
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-text-on-dark-faint hover:text-royal-gold transition-all duration-300 text-sm"
+              class="text-text-faint hover:text-royal-gold transition-all duration-300 text-sm"
             >
               {{ social.platform }}
             </a>
@@ -91,7 +91,7 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div
-        class="mt-12 pt-8 border-t border-white/5 text-center text-sm text-text-on-dark-faint"
+        class="mt-12 pt-8 border-t border-border-theme text-center text-sm text-text-faint"
       >
         &copy; {{ currentYear }} {{ settings?.coachName || "PCT Movement" }}.
         All rights reserved.

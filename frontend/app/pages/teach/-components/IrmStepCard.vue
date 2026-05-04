@@ -16,7 +16,7 @@ const StepIcon = computed(() => stepIcons[props.stepNumber as keyof typeof stepI
 
 <template>
   <div
-    class="relative bg-surface-raised rounded-xl p-8 border border-white/5 overflow-hidden transition-all duration-300 hover:border-white/10"
+    class="relative bg-surface-raised rounded-xl p-8 border border-border-theme overflow-hidden transition-all duration-300 hover:border-border-theme"
     :class="accentColor === 'green' ? 'border-t-2 border-t-royal-green' : 'border-t-2 border-t-royal-orange'"
   >
     <!-- Decorative numeral watermark -->
@@ -27,14 +27,14 @@ const StepIcon = computed(() => stepIcons[props.stepNumber as keyof typeof stepI
       {{ stepNumber }}
     </span>
 
-    <h3 class="text-lg font-bold text-text-on-dark mb-3 relative z-10 flex items-center gap-2">
+    <h3 class="text-lg font-bold text-text-main mb-3 relative z-10 flex items-center gap-2">
       <component :is="StepIcon" class="w-5 h-5 shrink-0" />
       {{ title }}
     </h3>
-    <p class="text-text-on-dark-muted leading-relaxed relative z-10">
+    <p class="text-text-muted leading-relaxed relative z-10">
       {{ description }}
     </p>
-    <p v-if="aside" class="text-text-on-dark-faint italic text-sm mt-3 relative z-10">
+    <p v-if="aside" class="text-text-faint italic text-sm mt-3 relative z-10">
       {{ aside }}
     </p>
   </div>

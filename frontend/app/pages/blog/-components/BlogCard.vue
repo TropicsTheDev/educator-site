@@ -26,7 +26,7 @@ function formatDate(date: string) {
 <template>
   <NuxtLink
     :to="`/blog/${article.slug}`"
-    class="group block rounded-xl overflow-hidden bg-surface-raised border border-white/5 hover:border-white/10 transition-all duration-300"
+    class="group block rounded-xl overflow-hidden bg-surface-raised border border-border-theme hover:border-border-theme transition-all duration-300"
   >
     <div v-if="article.featuredImage" class="aspect-video overflow-hidden">
       <img
@@ -41,7 +41,7 @@ function formatDate(date: string) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-12 w-12 text-text-on-dark-faint"
+        class="h-12 w-12 text-text-faint"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -67,17 +67,17 @@ function formatDate(date: string) {
           :value="article.category.title"
           :pt="{ root: { class: ['text-xs font-medium px-2.5 py-0.5 rounded-full', badgeClass] } }"
         />
-        <span v-if="article.publishDate" class="text-xs text-text-on-dark-faint flex items-center gap-1.5">
+        <span v-if="article.publishDate" class="text-xs text-text-faint flex items-center gap-1.5">
           <Calendar class="w-3.5 h-3.5 shrink-0" />
           {{ formatDate(article.publishDate) }}
         </span>
       </div>
 
-      <h3 class="text-lg font-bold text-text-on-dark group-hover:text-royal-gold transition-colors duration-300 mb-2">
+      <h3 class="text-lg font-bold text-text-main group-hover:text-royal-gold transition-colors duration-300 mb-2">
         {{ article.title }}
       </h3>
 
-      <p v-if="article.excerpt" class="text-sm text-text-on-dark-muted line-clamp-3">
+      <p v-if="article.excerpt" class="text-sm text-text-muted line-clamp-3">
         {{ article.excerpt }}
       </p>
     </div>

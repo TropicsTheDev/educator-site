@@ -38,7 +38,7 @@ const navLinks = [
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-surface-base/90 backdrop-blur-md border-b border-white/5 transition-colors duration-300">
+  <header class="sticky top-0 z-50 bg-surface-base/90 backdrop-blur-md border-b border-border-theme transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <NuxtLink to="/" class="text-xl font-bold font-display text-royal-gold hover:text-royal-gold/80 transition-all duration-300">
         {{ settings?.siteTitle || 'PCT Movement' }}
@@ -51,7 +51,7 @@ const navLinks = [
             v-for="link in navLinks"
             :key="link.to"
             :to="link.to"
-            class="text-sm font-medium text-text-on-dark-muted hover:text-royal-gold transition-all duration-300"
+            class="text-sm font-medium text-text-muted hover:text-royal-gold transition-all duration-300"
             active-class="!text-royal-gold"
           >
             {{ link.label }}
@@ -60,7 +60,7 @@ const navLinks = [
 
         <!-- Color mode toggle -->
         <Button
-          :pt="{ root: { class: 'p-2 text-text-on-dark-muted hover:text-royal-gold transition-all duration-300' } }"
+          :pt="{ root: { class: 'p-2 text-text-muted hover:text-royal-gold transition-all duration-300' } }"
           aria-label="Toggle color mode"
           @click="toggleColorMode"
         >
@@ -70,7 +70,7 @@ const navLinks = [
 
         <!-- Mobile hamburger -->
         <Button
-          :pt="{ root: { class: 'md:hidden p-2 text-text-on-dark hover:text-royal-gold transition-all duration-300' } }"
+          :pt="{ root: { class: 'md:hidden p-2 text-text-main hover:text-royal-gold transition-all duration-300' } }"
           aria-label="Open menu"
           @click="sidebarVisible = true"
         >
@@ -86,7 +86,7 @@ const navLinks = [
           <div class="absolute inset-0 bg-black/50" @click="sidebarVisible = false" />
           <nav class="absolute right-0 top-0 h-full w-72 bg-surface-raised p-6 flex flex-col" aria-label="Mobile navigation">
             <Button
-              :pt="{ root: { class: 'self-end p-2 text-text-on-dark-muted hover:text-royal-gold mb-8 transition-all duration-300' } }"
+              :pt="{ root: { class: 'self-end p-2 text-text-muted hover:text-royal-gold mb-8 transition-all duration-300' } }"
               aria-label="Close menu"
               @click="sidebarVisible = false"
             >
@@ -98,14 +98,14 @@ const navLinks = [
               :to="link.to"
               :class="linksVisible ? 'nav-link-active' : 'nav-link-enter'"
               :style="{ transitionDelay: `${index * 50}ms` }"
-              class="py-3 text-lg font-medium text-text-on-dark hover:text-royal-gold border-b border-white/5 transition-all duration-300"
+              class="py-3 text-lg font-medium text-text-main hover:text-royal-gold border-b border-border-theme transition-all duration-300"
               active-class="!text-royal-gold"
             >
               {{ link.label }}
             </NuxtLink>
 
             <!-- Social links & CTA -->
-            <div class="mt-auto border-t border-white/5 pt-6">
+            <div class="mt-auto border-t border-border-theme pt-6">
               <div v-if="settings?.socialLinks" class="flex flex-wrap gap-4 mb-4">
                 <a
                   v-for="social in settings.socialLinks"
@@ -113,7 +113,7 @@ const navLinks = [
                   :href="social.url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-text-on-dark-faint hover:text-royal-gold transition-all duration-300 text-sm"
+                  class="text-text-faint hover:text-royal-gold transition-all duration-300 text-sm"
                 >
                   {{ social.label || social.platform }}
                 </a>

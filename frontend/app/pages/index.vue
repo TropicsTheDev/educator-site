@@ -34,7 +34,7 @@ useSeoMeta({
   <div>
     <!-- Hero -->
     <section
-      class="hero-glow bg-gradient-to-br from-royal-purple/20 via-surface-base to-surface-base text-text-on-dark py-24 md:py-32"
+      class="hero-glow bg-gradient-to-br from-royal-purple/20 via-surface-base to-surface-base text-text-main py-24 md:py-32"
     >
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12">
@@ -44,7 +44,7 @@ useSeoMeta({
               Where movement meets curiosity
             </h1>
             <p
-              class="text-lg text-text-on-dark-muted leading-relaxed mb-8 max-w-xl"
+              class="text-lg text-text-muted leading-relaxed mb-8 max-w-xl"
             >
               <template v-if="coachName">I'm {{ coachName }}!</template>
               I guide people through Brazilian Jiu Jitsu and Urban Kiz with a
@@ -73,9 +73,9 @@ useSeoMeta({
           <!-- Coach photo placeholder -->
           <div class="shrink-0">
             <div
-              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-white/10 flex items-center justify-center"
+              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-border-theme flex items-center justify-center"
             >
-              <div class="text-center text-text-on-dark-faint">
+              <div class="text-center text-text-faint">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-16 w-16 mx-auto mb-2"
@@ -101,7 +101,7 @@ useSeoMeta({
     <!-- IRM Teaser -->
     <section class="py-6">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <p class="text-text-on-dark-muted italic">
+        <p class="text-text-muted italic">
           It's a four-step cycle that helps you rewire your instincts — and
           we'll use it in every session.
           <NuxtLink
@@ -134,7 +134,7 @@ useSeoMeta({
             <h3 class="text-xl font-bold text-royal-green mb-3">
               Brazilian Jiu-Jitsu
             </h3>
-            <p class="text-text-on-dark-muted leading-relaxed mb-4">
+            <p class="text-text-muted leading-relaxed mb-4">
               I help practitioners break through plateaus by learning to
               perceive and manage forces — no more memorizing moves that vanish
               under pressure.
@@ -151,7 +151,7 @@ useSeoMeta({
           >
             <Music class="w-8 h-8 text-royal-orange/60 mb-3" />
             <h3 class="text-xl font-bold text-royal-orange mb-3">Urban Kiz</h3>
-            <p class="text-text-on-dark-muted leading-relaxed mb-4">
+            <p class="text-text-muted leading-relaxed mb-4">
               I guide dancers to build authentic connection by understanding how
               perception shapes lead, follow, and musicality.
             </p>
@@ -167,7 +167,7 @@ useSeoMeta({
     <section class="py-20 md:py-24 bg-surface-raised/30">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Why PCT?" centered />
-        <div class="prose prose-lg max-w-none text-text-on-dark">
+        <div class="prose prose-lg max-w-none text-text-main">
           <p>
             I started teaching BJJ and dance the way I was taught — with
             techniques and patterns. But I saw students hit walls. Their skills
@@ -228,7 +228,7 @@ useSeoMeta({
               v-for="post in recentPosts"
               :key="post._id"
               :to="`/blog/${post.slug}`"
-              class="bg-surface-raised rounded-xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-300"
+              class="bg-surface-raised rounded-xl overflow-hidden border border-border-theme hover:border-border-theme transition-all duration-300"
             >
               <div class="p-6">
                 <Tag
@@ -236,12 +236,12 @@ useSeoMeta({
                   :value="post.category.title"
                   :pt="{ root: { class: ['text-xs font-medium px-2 py-0.5 rounded-full', getBadgeClass(post.category?.discipline)] } }"
                 />
-                <h3 class="text-lg font-semibold text-text-on-dark mt-3 mb-2">
+                <h3 class="text-lg font-semibold text-text-main mt-3 mb-2">
                   {{ post.title }}
                 </h3>
                 <p
                   v-if="post.excerpt"
-                  class="text-sm text-text-on-dark-muted leading-relaxed mb-3 line-clamp-3"
+                  class="text-sm text-text-muted leading-relaxed mb-3 line-clamp-3"
                 >
                   {{ post.excerpt }}
                 </p>
@@ -262,7 +262,7 @@ useSeoMeta({
         </template>
 
         <template v-else>
-          <p class="text-center text-text-on-dark-muted italic">
+          <p class="text-center text-text-muted italic">
             No posts yet. Check back soon!
           </p>
         </template>

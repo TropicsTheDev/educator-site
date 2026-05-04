@@ -81,7 +81,7 @@ useSeoMeta({
   <div>
     <!-- Hero -->
     <section
-      class="hero-glow bg-gradient-to-br from-royal-green/15 via-surface-base to-surface-base text-text-on-dark py-24 md:py-32"
+      class="hero-glow bg-gradient-to-br from-royal-green/15 via-surface-base to-surface-base text-text-main py-24 md:py-32"
       style="--glow-color: rgba(73, 170, 131, 0.08)"
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
@@ -89,7 +89,7 @@ useSeoMeta({
           Feeling Stuck on the Mats?<br />Let's Build Your Game Together.
         </h1>
         <p
-          class="text-lg text-text-on-dark-muted leading-relaxed max-w-3xl mx-auto"
+          class="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto"
         >
           You're hitting the same plateaus. Techniques that work in drilling
           fall apart against resistance. You know what to do, but not how to
@@ -103,8 +103,8 @@ useSeoMeta({
       <!-- Open hands icon -->
       <Community class="w-10 h-10 mx-auto mb-5 text-royal-green/40" />
 
-      <p class="text-text-on-dark-muted leading-relaxed">
-        <span class="text-text-on-dark font-medium">You're not alone</span>
+      <p class="text-text-muted leading-relaxed">
+        <span class="text-text-main font-medium">You're not alone</span>
         — and more important, you're not broken. Traditional Jiu-Jitsu teaching
         often leaves you collecting moves instead of developing real, adaptable
         skill. My coaching takes a different path.
@@ -159,7 +159,7 @@ useSeoMeta({
         </div>
 
         <p
-          class="mt-8 text-text-on-dark text-center max-w-2xl mx-auto leading-relaxed"
+          class="mt-8 text-text-main text-center max-w-2xl mx-auto leading-relaxed"
         >
           You don't have to figure it out alone. My role is to guide you through
           this cycle — to see what you can't yet see, and to help you discover
@@ -176,7 +176,7 @@ useSeoMeta({
           <div class="flex items-start gap-3">
             <MapIcon class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Location</span>
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               I do floor rentals or house visits
               <span class="text-sm italic"
                 >(Additional charges apply if the venue charges a mat fee)</span
@@ -186,7 +186,7 @@ useSeoMeta({
           <div class="flex items-start gap-3">
             <Gem class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Pricing</span>
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               $55/hour via Venmo, CashApp, Zelle, or cash
             </p>
           </div>
@@ -195,7 +195,7 @@ useSeoMeta({
             <span class="text-royal-green font-bold mt-0.5"
               >Referral&nbsp;Discount</span
             >
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               Refer a student, and you'll get $10 off your next session.
             </p>
           </div>
@@ -204,7 +204,7 @@ useSeoMeta({
             <span class="text-royal-green font-bold mt-0.5"
               >Group&nbsp;Sessions</span
             >
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               Bring up to 3 friends and split the session!
               <span class="text-sm italic"
                 >(Only one referral discount can be applied per session.)</span
@@ -214,7 +214,7 @@ useSeoMeta({
           <div class="flex items-start gap-3">
             <Calendar class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
             <span class="text-royal-green font-bold mt-0.5">Availability</span>
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               My calendar reflects the next 7 days. New slots open weekly.
             </p>
           </div>
@@ -230,7 +230,7 @@ useSeoMeta({
           :calendly-url="calendlyUrl"
           label="Book Your Session"
         />
-        <p class="mt-6 text-text-on-dark-muted">
+        <p class="mt-6 text-text-muted">
           Not sure yet?
           <NuxtLink to="/blog" class="text-royal-gold hover:underline">
             Read my blog posts about PCT and BJJ &rarr;

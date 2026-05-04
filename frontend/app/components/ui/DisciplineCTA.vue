@@ -10,11 +10,11 @@ const disciplineName = computed(() => props.discipline === 'kiz' ? 'Urban Kiz' :
 </script>
 
 <template>
-  <div class="mt-12 p-8 bg-surface-raised rounded-xl border border-white/5 text-center">
-    <h3 class="text-xl font-bold text-text-on-dark mb-2">
+  <div class="mt-12 p-8 bg-surface-raised rounded-xl border border-border-theme text-center">
+    <h3 class="text-xl font-bold text-text-main mb-2">
       Interested in {{ disciplineName }} coaching?
     </h3>
-    <p class="text-text-on-dark-muted mb-6">
+    <p class="text-text-muted mb-6">
       Learn how Perceptual Control Theory can transform your {{ disciplineName }} practice.
     </p>
     <NuxtLink

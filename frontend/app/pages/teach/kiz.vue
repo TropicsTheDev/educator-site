@@ -81,7 +81,7 @@ useSeoMeta({
   <div>
     <!-- Hero -->
     <section
-      class="hero-glow bg-gradient-to-br from-royal-orange/15 via-surface-base to-surface-base text-text-on-dark py-24 md:py-32"
+      class="hero-glow bg-gradient-to-br from-royal-orange/15 via-surface-base to-surface-base text-text-main py-24 md:py-32"
       style="--glow-color: rgba(249, 150, 108, 0.08)"
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
@@ -89,7 +89,7 @@ useSeoMeta({
           Feel the Music, Trust the Connection,<br />Find Your Flow.
         </h1>
         <p
-          class="text-lg text-text-on-dark-muted leading-relaxed max-w-3xl mx-auto"
+          class="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto"
         >
           You know the steps. You've taken workshops. But something still feels
           off — robotic, rehearsed, like you're dancing <em>at</em> your partner
@@ -104,8 +104,8 @@ useSeoMeta({
       <!-- Open hands icon -->
       <Community class="w-10 h-10 mx-auto mb-5 text-royal-orange/40" />
 
-      <p class="text-text-on-dark-muted leading-relaxed">
-        <span class="text-text-on-dark font-medium">You're not alone</span>
+      <p class="text-text-muted leading-relaxed">
+        <span class="text-text-main font-medium">You're not alone</span>
         — and more important, there's nothing wrong with you. Traditional dance
         classes often teach patterns, not presence. They give you sequences to
         memorize, but not the perceptual skills to adapt in real time. My
@@ -161,7 +161,7 @@ useSeoMeta({
         </div>
 
         <p
-          class="mt-8 text-text-on-dark text-center max-w-2xl mx-auto leading-relaxed"
+          class="mt-8 text-text-main text-center max-w-2xl mx-auto leading-relaxed"
         >
           You don't have to figure it out alone. My role is to guide you through
           this cycle — to perceive what you can't yet perceive, and to help you
@@ -178,7 +178,7 @@ useSeoMeta({
           <div class="flex items-start gap-3">
             <MapIcon class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Location</span>
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               I do floor rentals or home visits
               <span class="text-sm italic"
                 >(Additional charges may apply if the venue has a rental
@@ -189,7 +189,7 @@ useSeoMeta({
           <div class="flex items-start gap-3">
             <Gem class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Pricing</span>
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               $45/hour via Venmo, CashApp, Zelle, or cash
             </p>
           </div>
@@ -198,7 +198,7 @@ useSeoMeta({
             <span class="text-royal-orange font-bold mt-0.5"
               >Referral&nbsp;Discount</span
             >
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               Refer a student, and you'll get $10 off your next session.
             </p>
           </div>
@@ -207,7 +207,7 @@ useSeoMeta({
             <span class="text-royal-orange font-bold mt-0.5"
               >Group&nbsp;Sessions</span
             >
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               Bring up to 3 friends and split the session! Perfect for couples
               or practice groups.
               <span class="text-sm italic"
@@ -218,7 +218,7 @@ useSeoMeta({
           <div class="flex items-start gap-3">
             <Calendar class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
             <span class="text-royal-orange font-bold mt-0.5">Availability</span>
-            <p class="text-text-on-dark-muted">
+            <p class="text-text-muted">
               My calendar reflects the next 7 days. New slots open weekly.
             </p>
           </div>
@@ -234,7 +234,7 @@ useSeoMeta({
           :calendly-url="calendlyUrl"
           label="Book Your Session"
         />
-        <p class="mt-6 text-text-on-dark-muted">
+        <p class="mt-6 text-text-muted">
           Not sure yet?
           <NuxtLink to="/blog" class="text-royal-gold hover:underline">
             Read my blog posts about PCT and dance &rarr;

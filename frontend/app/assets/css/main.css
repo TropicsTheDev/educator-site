@@ -13,25 +13,22 @@
   --color-royal-orange: #f9966c;
 
   /* ============================================
-   * DARK SURFACE HIERARCHY (3-tier elevation)
+   * DYNAMIC THEME COLORS
    * ============================================ */
-  --color-surface-base: #0d0d1a;
-  --color-surface-raised: #16162b;
-  --color-surface-overlay: #1e1e38;
+  --color-surface-base: var(--theme-surface-base);
+  --color-surface-raised: var(--theme-surface-raised);
+  --color-surface-overlay: var(--theme-surface-overlay);
 
-  /* Light mode surfaces */
-  --color-surface-light: #fafaf8;
-  --color-surface-white: #ffffff;
-  --color-surface-dark: #1a1a2e;
+  --color-text-main: var(--theme-text-main);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-faint: var(--theme-text-faint);
 
-  /* ============================================
-   * TEXT COLORS
-   * ============================================ */
-  --color-text-on-dark: #e8e6f0;
-  --color-text-on-dark-muted: #9896a8;
-  --color-text-on-dark-faint: #5c5a6e;
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #4a4a68;
+  --color-border-theme: var(--theme-border);
+
+  /* Legacy aliases for gradual migration */
+  --color-text-on-dark: var(--theme-text-main);
+  --color-text-on-dark-muted: var(--theme-text-muted);
+  --color-text-on-dark-faint: var(--theme-text-faint);
 
   /* ============================================
    * TYPOGRAPHY
@@ -55,16 +52,47 @@
 }
 
 /* ============================================
- * BASE TYPOGRAPHY
+ * BASE TYPOGRAPHY & THEME DEFINITIONS
  * ============================================ */
 @layer base {
+  :root, .light {
+    --theme-surface-base: #fafaf8;
+    --theme-surface-raised: #ffffff;
+    --theme-surface-overlay: #f0f0f5;
+    
+    --theme-text-main: #1a1a2e;
+    --theme-text-muted: #4a4a68;
+    --theme-text-faint: #808098;
+    
+    --theme-border: rgba(0, 0, 0, 0.08);
+
+    color-scheme: light;
+  }
+
+  .dark {
+    --theme-surface-base: #0d0d1a;
+    --theme-surface-raised: #16162b;
+    --theme-surface-overlay: #1e1e38;
+    
+    --theme-text-main: #e8e6f0;
+    --theme-text-muted: #9896a8;
+    --theme-text-faint: #5c5a6e;
+    
+    --theme-border: rgba(255, 255, 255, 0.08);
+
+    color-scheme: dark;
+  }
+
   html {
     font-size: 18px;
+    background-color: var(--theme-surface-base);
+    color: var(--theme-text-main);
   }
 
   body {
     font-family: var(--font-body);
     line-height: 1.5;
+    @apply transition-colors duration-300;
   }
 
   h1,

@@ -20,7 +20,7 @@ export const homePageQuery = groq`
     },
     "recentPosts": *[_type == "article"] | order(publishDate desc)[0..2] {
       _id, title, "slug": slug.current, excerpt, publishDate, featuredImage,
-      "category": category->{title, "slug": slug.current}
+      "category": category->{title, "slug": slug.current, discipline}
     }
   }
 `
