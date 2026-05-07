@@ -7,7 +7,11 @@ const props = defineProps<{
     slug: string
     excerpt?: string
     publishDate?: string
-    featuredImage?: string
+    featuredImage?: {
+      asset: {
+        _ref: string
+      }
+    }
     category?: { title: string; slug: string; discipline?: string }
   }
 }>()
@@ -28,10 +32,11 @@ function formatDate(date: string) {
     :to="`/blog/${article.slug}`"
     class="group block rounded-xl overflow-hidden bg-surface-raised border border-border-theme hover:border-border-theme transition-all duration-300"
   >
-    <div v-if="article.featuredImage" class="aspect-video overflow-hidden">
-      <img
-        :src="article.featuredImage"
+    <div v-if="article.featuredImage?.asset?._ref" class="aspect-video overflow-hidden">
+      <SanityImage
+        :asset-id="article.featuredImage.asset._ref"
         :alt="article.title"
+        auto="format"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
       />
     </div>

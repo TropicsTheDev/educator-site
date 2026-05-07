@@ -49,6 +49,32 @@
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
+
+  /* ============================================
+   * ANIMATIONS
+   * ============================================ */
+  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ============================================
@@ -106,8 +132,6 @@
 
 /* ============================================
  * VISUAL TEXTURE — Subtle noise grain overlay
- * Barely visible (2.5% opacity) but removes
- * the "flat digital screen" feel.
  * ============================================ */
 body::before {
   content: "";
@@ -123,8 +147,6 @@ body::before {
 
 /* ============================================
  * HERO GLOW — Soft radial gradient behind hero content
- * Use: class="hero-glow" on hero sections
- * Customize color: style="--glow-color: rgba(...)"
  * ============================================ */
 .hero-glow {
   position: relative;
@@ -154,7 +176,6 @@ body::before {
 
 /* ============================================
  * SECTION DIVIDER — Gold accent between sections
- * Use: <div class="section-divider" />
  * ============================================ */
 .section-divider {
   width: 4rem;
@@ -163,6 +184,20 @@ body::before {
   opacity: 0.4;
   border-radius: 9999px;
   margin: 0 auto;
+}
+
+/* ============================================
+ * ANIMATION UTILITIES
+ * ============================================ */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Init state for fade-in animations to prevent flash before animation starts */
+.animate-fade-in-up, .animate-fade-in {
+  opacity: 0;
 }
 
 /* ============================================

@@ -53,10 +53,11 @@ function formatDate(date: string) {
       </header>
 
       <!-- Featured Image -->
-      <div v-if="article.featuredImage" :class="['mb-10 rounded-xl overflow-hidden border-2', borderClass]">
-        <img
-          :src="article.featuredImage"
+      <div v-if="article.featuredImage?.asset?._ref" :class="['mb-10 rounded-xl overflow-hidden border-2', borderClass]">
+        <SanityImage
+          :asset-id="article.featuredImage.asset._ref"
           :alt="article.title"
+          auto="format"
           class="w-full object-cover"
         />
       </div>

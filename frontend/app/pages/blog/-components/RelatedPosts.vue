@@ -5,7 +5,11 @@ defineProps<{
     title: string
     slug: string
     excerpt?: string
-    featuredImage?: string
+    featuredImage?: {
+      asset: {
+        _ref: string
+      }
+    }
     publishDate?: string
   }>
 }>()
@@ -30,10 +34,11 @@ function formatDate(date: string) {
         :to="`/blog/${post.slug}`"
         class="group block rounded-xl overflow-hidden bg-surface-raised border border-border-theme hover:border-border-theme transition-all duration-300"
       >
-        <div v-if="post.featuredImage" class="aspect-video overflow-hidden">
-          <img
-            :src="post.featuredImage"
+        <div v-if="post.featuredImage?.asset?._ref" class="aspect-video overflow-hidden">
+          <SanityImage
+            :asset-id="post.featuredImage.asset._ref"
             :alt="post.title"
+            auto="format"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>

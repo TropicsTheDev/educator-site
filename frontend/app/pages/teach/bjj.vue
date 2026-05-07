@@ -85,11 +85,11 @@ useSeoMeta({
       style="--glow-color: rgba(73, 170, 131, 0.08)"
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight animate-fade-in-up">
           Feeling Stuck on the Mats?<br />Let's Build Your Game Together.
         </h1>
         <p
-          class="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto"
+          class="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto animate-fade-in-up delay-100"
         >
           You're hitting the same plateaus. Techniques that work in drilling
           fall apart against resistance. You know what to do, but not how to
@@ -99,9 +99,9 @@ useSeoMeta({
     </section>
 
     <!-- Bridge -->
-    <div class="max-w-2xl mx-auto px-4 py-10 text-center">
+    <div class="max-w-2xl mx-auto px-4 py-10 text-center animate-fade-in-up delay-200">
       <!-- Open hands icon -->
-      <Community class="w-10 h-10 mx-auto mb-5 text-royal-green/40" />
+      <Community class="w-10 h-10 mx-auto mb-5 text-royal-green/40 hover:text-royal-green hover:scale-110 transition-all duration-300" />
 
       <p class="text-text-muted leading-relaxed">
         <span class="text-text-main font-medium">You're not alone</span>
@@ -143,7 +143,7 @@ useSeoMeta({
           subtitle="Think of our sessions as a collaborative cycle — moving from struggle to insight, and from insight to integrated skill. Each lesson follows the same four-step rhythm:"
         />
 
-        <div class="mt-8">
+        <div class="mt-8 hover:shadow-sm transition-shadow duration-300 rounded-xl">
           <IrmCycle :steps="irmSteps" discipline="bjj" />
         </div>
       </div>
@@ -173,50 +173,60 @@ useSeoMeta({
       <div class="max-w-3xl mx-auto px-4">
         <UiSectionHeading title="Practical Details" />
         <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <MapIcon class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
-            <span class="text-royal-green font-bold mt-0.5">Location</span>
-            <p class="text-text-muted">
-              I do floor rentals or house visits
-              <span class="text-sm italic"
-                >(Additional charges apply if the venue charges a mat fee)</span
+          <div class="flex items-start gap-3 group">
+            <MapIcon class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-green transition-all duration-300" />
+            <div>
+              <span class="text-royal-green font-bold mt-0.5">Location</span>
+              <p class="text-text-muted">
+                I do floor rentals or house visits
+                <span class="text-sm italic"
+                  >(Additional charges apply if the venue charges a mat fee)</span
+                >
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 group">
+            <Gem class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-green transition-all duration-300" />
+            <div>
+              <span class="text-royal-green font-bold mt-0.5">Pricing</span>
+              <p class="text-text-muted">
+                $55/hour via Venmo, CashApp, Zelle, or cash
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 group">
+            <Gift class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-green transition-all duration-300" />
+            <div>
+              <span class="text-royal-green font-bold mt-0.5"
+                >Referral&nbsp;Discount</span
               >
-            </p>
+              <p class="text-text-muted">
+                Refer a student, and you'll get $10 off your next session.
+              </p>
+            </div>
           </div>
-          <div class="flex items-start gap-3">
-            <Gem class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
-            <span class="text-royal-green font-bold mt-0.5">Pricing</span>
-            <p class="text-text-muted">
-              $55/hour via Venmo, CashApp, Zelle, or cash
-            </p>
-          </div>
-          <div class="flex items-start gap-3">
-            <Gift class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
-            <span class="text-royal-green font-bold mt-0.5"
-              >Referral&nbsp;Discount</span
-            >
-            <p class="text-text-muted">
-              Refer a student, and you'll get $10 off your next session.
-            </p>
-          </div>
-          <div class="flex items-start gap-3">
-            <UserPlus class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
-            <span class="text-royal-green font-bold mt-0.5"
-              >Group&nbsp;Sessions</span
-            >
-            <p class="text-text-muted">
-              Bring up to 3 friends and split the session!
-              <span class="text-sm italic"
-                >(Only one referral discount can be applied per session.)</span
+          <div class="flex items-start gap-3 group">
+            <UserPlus class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-green transition-all duration-300" />
+            <div>
+              <span class="text-royal-green font-bold mt-0.5"
+                >Group&nbsp;Sessions</span
               >
-            </p>
+              <p class="text-text-muted">
+                Bring up to 3 friends and split the session!
+                <span class="text-sm italic"
+                  >(Only one referral discount can be applied per session.)</span
+                >
+              </p>
+            </div>
           </div>
-          <div class="flex items-start gap-3">
-            <Calendar class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5" />
-            <span class="text-royal-green font-bold mt-0.5">Availability</span>
-            <p class="text-text-muted">
-              My calendar reflects the next 7 days. New slots open weekly.
-            </p>
+          <div class="flex items-start gap-3 group">
+            <Calendar class="w-5 h-5 text-royal-green/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-green transition-all duration-300" />
+            <div>
+              <span class="text-royal-green font-bold mt-0.5">Availability</span>
+              <p class="text-text-muted">
+                My calendar reflects the next 7 days. New slots open weekly.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -225,14 +235,16 @@ useSeoMeta({
     <!-- CTA -->
     <section class="py-16 md:py-20 bg-surface-raised/30">
       <div class="max-w-3xl mx-auto px-4 text-center">
-        <UiCalendlyButton
-          v-if="calendlyUrl"
-          :calendly-url="calendlyUrl"
-          label="Book Your Session"
-        />
+        <div class="hover:-translate-y-1 transition-transform duration-300 inline-block">
+          <UiCalendlyButton
+            v-if="calendlyUrl"
+            :calendly-url="calendlyUrl"
+            label="Book Your Session"
+          />
+        </div>
         <p class="mt-6 text-text-muted">
           Not sure yet?
-          <NuxtLink to="/blog" class="text-royal-gold hover:underline">
+          <NuxtLink to="/blog" class="text-royal-gold hover:underline transition-colors duration-200">
             Read my blog posts about PCT and BJJ &rarr;
           </NuxtLink>
         </p>
@@ -240,6 +252,6 @@ useSeoMeta({
     </section>
 
     <!-- Testimonials -->
-    <DisciplineTestimonials :testimonials="testimonials || []" />
+    <DisciplineTestimonials :testimonials="testimonials || []" class="hover:shadow-sm transition-shadow duration-300" />
   </div>
 </template>

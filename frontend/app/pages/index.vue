@@ -40,11 +40,11 @@ useSeoMeta({
         <div class="flex flex-col md:flex-row items-center gap-12">
           <!-- Text -->
           <div class="flex-1 text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight animate-fade-in-up">
               Where movement meets curiosity
             </h1>
             <p
-              class="text-lg text-text-muted leading-relaxed mb-8 max-w-xl"
+              class="text-lg text-text-muted leading-relaxed mb-8 max-w-xl animate-fade-in-up delay-100"
             >
               <template v-if="coachName">I'm {{ coachName }}!</template>
               I guide people through Brazilian Jiu Jitsu and Urban Kiz with a
@@ -53,17 +53,17 @@ useSeoMeta({
               create, and find your flow.
             </p>
             <div
-              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up delay-200"
             >
               <NuxtLink
                 to="/teach/bjj"
-                class="inline-block px-8 py-3 border border-royal-green/30 text-royal-green rounded-xl hover:bg-royal-green/10 transition-all duration-300"
+                class="inline-block px-8 py-3 border border-royal-green/30 text-royal-green rounded-xl hover:bg-royal-green/10 hover:scale-105 hover:-translate-y-1 transition-all duration-300"
               >
                 Explore BJJ
               </NuxtLink>
               <NuxtLink
                 to="/teach/kiz"
-                class="inline-block px-8 py-3 border border-royal-orange/30 text-royal-orange rounded-xl hover:bg-royal-orange/10 transition-all duration-300"
+                class="inline-block px-8 py-3 border border-royal-orange/30 text-royal-orange rounded-xl hover:bg-royal-orange/10 hover:scale-105 hover:-translate-y-1 transition-all duration-300"
               >
                 Explore Urban Kiz
               </NuxtLink>
@@ -71,14 +71,14 @@ useSeoMeta({
           </div>
 
           <!-- Coach photo placeholder -->
-          <div class="shrink-0">
+          <div class="shrink-0 animate-fade-in delay-300">
             <div
-              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-border-theme flex items-center justify-center"
+              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-border-theme flex items-center justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
             >
               <div class="text-center text-text-faint">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-16 w-16 mx-auto mb-2"
+                  class="h-16 w-16 mx-auto mb-2 opacity-50"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -99,14 +99,14 @@ useSeoMeta({
     </section>
 
     <!-- IRM Teaser -->
-    <section class="py-6">
+    <section class="py-6 animate-fade-in-up delay-400">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <p class="text-text-muted italic">
           It's a four-step cycle that helps you rewire your instincts — and
           we'll use it in every session.
           <NuxtLink
             to="/teach/bjj"
-            class="text-royal-gold hover:underline ml-1"
+            class="text-royal-gold hover:underline ml-1 transition-colors duration-200"
           >
             Learn more &rarr;
           </NuxtLink>
@@ -124,13 +124,13 @@ useSeoMeta({
           subtitle="Perceptual Control Theory brings clarity to every practice — whether on the mats or the dance floor."
           centered
         />
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
           <!-- BJJ Card -->
           <NuxtLink
             to="/teach/bjj"
-            class="bg-surface-raised rounded-xl p-8 border border-royal-green/15 hover:border-royal-green/30 transition-all duration-300 group"
+            class="bg-surface-raised rounded-xl p-8 border border-royal-green/15 hover:border-royal-green/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
           >
-            <Shield class="w-8 h-8 text-royal-green/60 mb-3" />
+            <Shield class="w-8 h-8 text-royal-green/60 mb-3 group-hover:scale-110 group-hover:text-royal-green transition-transform duration-300" />
             <h3 class="text-xl font-bold text-royal-green mb-3">
               Brazilian Jiu-Jitsu
             </h3>
@@ -147,9 +147,9 @@ useSeoMeta({
           <!-- Urban Kiz Card -->
           <NuxtLink
             to="/teach/kiz"
-            class="bg-surface-raised rounded-xl p-8 border border-royal-orange/15 hover:border-royal-orange/30 transition-all duration-300 group"
+            class="bg-surface-raised rounded-xl p-8 border border-royal-orange/15 hover:border-royal-orange/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
           >
-            <Music class="w-8 h-8 text-royal-orange/60 mb-3" />
+            <Music class="w-8 h-8 text-royal-orange/60 mb-3 group-hover:scale-110 group-hover:text-royal-orange transition-transform duration-300" />
             <h3 class="text-xl font-bold text-royal-orange mb-3">Urban Kiz</h3>
             <p class="text-text-muted leading-relaxed mb-4">
               I guide dancers to build authentic connection by understanding how
@@ -167,7 +167,7 @@ useSeoMeta({
     <section class="py-20 md:py-24 bg-surface-raised/30">
       <div class="max-w-4xl mx-auto px-4">
         <UiSectionHeading title="Why PCT?" centered />
-        <div class="prose prose-lg max-w-none text-text-main">
+        <div class="prose prose-lg max-w-none text-text-main mt-8">
           <p>
             I started teaching BJJ and dance the way I was taught — with
             techniques and patterns. But I saw students hit walls. Their skills
@@ -181,12 +181,12 @@ useSeoMeta({
             creativity.
           </p>
         </div>
-        <div class="text-center mt-8">
+        <div class="text-center mt-10">
           <NuxtLink
             to="/blog"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/90 transition-all duration-300"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-royal-purple text-white font-medium rounded-xl hover:bg-royal-purple/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
           >
-            <BookOpen class="w-4 h-4" /> Read the Blog
+            <BookOpen class="w-5 h-5" /> Read the Blog
           </NuxtLink>
         </div>
       </div>
@@ -200,7 +200,7 @@ useSeoMeta({
           subtitle="Hear from practitioners who have transformed their approach."
           centered
         />
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           <UiTestimonialCard
             v-for="testimonial in testimonials"
             :key="testimonial._id"
@@ -208,6 +208,7 @@ useSeoMeta({
             :discipline="testimonial.discipline"
             :quote="testimonial.quote"
             :photo="testimonial.photo"
+            class="hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           />
         </div>
       </div>
@@ -223,12 +224,12 @@ useSeoMeta({
         />
 
         <template v-if="recentPosts?.length">
-          <div class="grid md:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-3 gap-6 mt-8">
             <NuxtLink
               v-for="post in recentPosts"
               :key="post._id"
               :to="`/blog/${post.slug}`"
-              class="bg-surface-raised rounded-xl overflow-hidden border border-border-theme hover:border-border-theme transition-all duration-300"
+              class="bg-surface-raised rounded-xl overflow-hidden border border-border-theme hover:border-royal-purple/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
             >
               <div class="p-6">
                 <Tag
@@ -236,7 +237,7 @@ useSeoMeta({
                   :value="post.category.title"
                   :pt="{ root: { class: ['text-xs font-medium px-2 py-0.5 rounded-full', getBadgeClass(post.category?.discipline)] } }"
                 />
-                <h3 class="text-lg font-semibold text-text-main mt-3 mb-2">
+                <h3 class="text-lg font-semibold text-text-main mt-3 mb-2 group-hover:text-royal-purple transition-colors duration-300">
                   {{ post.title }}
                 </h3>
                 <p
@@ -245,16 +246,16 @@ useSeoMeta({
                 >
                   {{ post.excerpt }}
                 </p>
-                <span class="text-royal-gold text-sm font-medium">
+                <span class="text-royal-gold text-sm font-medium group-hover:underline">
                   Read more &rarr;
                 </span>
               </div>
             </NuxtLink>
           </div>
-          <div class="text-center mt-10">
+          <div class="text-center mt-12">
             <NuxtLink
               to="/blog"
-              class="inline-block px-6 py-3 border border-royal-gold text-royal-gold font-medium rounded-xl hover:bg-royal-gold/10 transition-all duration-300"
+              class="inline-block px-8 py-3 border border-royal-gold text-royal-gold font-medium rounded-xl hover:bg-royal-gold/10 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
             >
               View All Posts
             </NuxtLink>
@@ -262,7 +263,7 @@ useSeoMeta({
         </template>
 
         <template v-else>
-          <p class="text-center text-text-muted italic">
+          <p class="text-center text-text-muted italic mt-8">
             No posts yet. Check back soon!
           </p>
         </template>

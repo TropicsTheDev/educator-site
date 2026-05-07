@@ -85,11 +85,11 @@ useSeoMeta({
       style="--glow-color: rgba(249, 150, 108, 0.08)"
     >
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight animate-fade-in-up">
           Feel the Music, Trust the Connection,<br />Find Your Flow.
         </h1>
         <p
-          class="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto"
+          class="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto animate-fade-in-up delay-100"
         >
           You know the steps. You've taken workshops. But something still feels
           off — robotic, rehearsed, like you're dancing <em>at</em> your partner
@@ -100,9 +100,9 @@ useSeoMeta({
     </section>
 
     <!-- Bridge -->
-    <div class="max-w-2xl mx-auto px-4 py-10 text-center">
+    <div class="max-w-2xl mx-auto px-4 py-10 text-center animate-fade-in-up delay-200">
       <!-- Open hands icon -->
-      <Community class="w-10 h-10 mx-auto mb-5 text-royal-orange/40" />
+      <Community class="w-10 h-10 mx-auto mb-5 text-royal-orange/40 hover:text-royal-orange hover:scale-110 transition-all duration-300" />
 
       <p class="text-text-muted leading-relaxed">
         <span class="text-text-main font-medium">You're not alone</span>
@@ -145,7 +145,7 @@ useSeoMeta({
           subtitle="Think of our sessions as a collaborative cycle — moving from confusion to clarity, and from clarity to embodied skill. Each lesson follows the same four-step rhythm:"
         />
 
-        <div class="mt-8">
+        <div class="mt-8 hover:shadow-sm transition-shadow duration-300 rounded-xl">
           <IrmCycle :steps="irmSteps" discipline="kiz" />
         </div>
       </div>
@@ -175,52 +175,62 @@ useSeoMeta({
       <div class="max-w-3xl mx-auto px-4">
         <UiSectionHeading title="Practical Details" />
         <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <MapIcon class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
-            <span class="text-royal-orange font-bold mt-0.5">Location</span>
-            <p class="text-text-muted">
-              I do floor rentals or home visits
-              <span class="text-sm italic"
-                >(Additional charges may apply if the venue has a rental
-                fee)</span
+          <div class="flex items-start gap-3 group">
+            <MapIcon class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-orange transition-all duration-300" />
+            <div>
+              <span class="text-royal-orange font-bold mt-0.5">Location</span>
+              <p class="text-text-muted">
+                I do floor rentals or home visits
+                <span class="text-sm italic"
+                  >(Additional charges may apply if the venue has a rental
+                  fee)</span
+                >
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 group">
+            <Gem class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-orange transition-all duration-300" />
+            <div>
+              <span class="text-royal-orange font-bold mt-0.5">Pricing</span>
+              <p class="text-text-muted">
+                $45/hour via Venmo, CashApp, Zelle, or cash
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 group">
+            <Gift class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-orange transition-all duration-300" />
+            <div>
+              <span class="text-royal-orange font-bold mt-0.5"
+                >Referral&nbsp;Discount</span
               >
-            </p>
+              <p class="text-text-muted">
+                Refer a student, and you'll get $10 off your next session.
+              </p>
+            </div>
           </div>
-          <div class="flex items-start gap-3">
-            <Gem class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
-            <span class="text-royal-orange font-bold mt-0.5">Pricing</span>
-            <p class="text-text-muted">
-              $45/hour via Venmo, CashApp, Zelle, or cash
-            </p>
-          </div>
-          <div class="flex items-start gap-3">
-            <Gift class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
-            <span class="text-royal-orange font-bold mt-0.5"
-              >Referral&nbsp;Discount</span
-            >
-            <p class="text-text-muted">
-              Refer a student, and you'll get $10 off your next session.
-            </p>
-          </div>
-          <div class="flex items-start gap-3">
-            <UserPlus class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
-            <span class="text-royal-orange font-bold mt-0.5"
-              >Group&nbsp;Sessions</span
-            >
-            <p class="text-text-muted">
-              Bring up to 3 friends and split the session! Perfect for couples
-              or practice groups.
-              <span class="text-sm italic"
-                >(Only one referral discount can be applied per session.)</span
+          <div class="flex items-start gap-3 group">
+            <UserPlus class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-orange transition-all duration-300" />
+            <div>
+              <span class="text-royal-orange font-bold mt-0.5"
+                >Group&nbsp;Sessions</span
               >
-            </p>
+              <p class="text-text-muted">
+                Bring up to 3 friends and split the session! Perfect for couples
+                or practice groups.
+                <span class="text-sm italic"
+                  >(Only one referral discount can be applied per session.)</span
+                >
+              </p>
+            </div>
           </div>
-          <div class="flex items-start gap-3">
-            <Calendar class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5" />
-            <span class="text-royal-orange font-bold mt-0.5">Availability</span>
-            <p class="text-text-muted">
-              My calendar reflects the next 7 days. New slots open weekly.
-            </p>
+          <div class="flex items-start gap-3 group">
+            <Calendar class="w-5 h-5 text-royal-orange/60 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-royal-orange transition-all duration-300" />
+            <div>
+              <span class="text-royal-orange font-bold mt-0.5">Availability</span>
+              <p class="text-text-muted">
+                My calendar reflects the next 7 days. New slots open weekly.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -229,14 +239,16 @@ useSeoMeta({
     <!-- CTA -->
     <section class="py-16 md:py-20 bg-surface-raised/30">
       <div class="max-w-3xl mx-auto px-4 text-center">
-        <UiCalendlyButton
-          v-if="calendlyUrl"
-          :calendly-url="calendlyUrl"
-          label="Book Your Session"
-        />
+        <div class="hover:-translate-y-1 transition-transform duration-300 inline-block">
+          <UiCalendlyButton
+            v-if="calendlyUrl"
+            :calendly-url="calendlyUrl"
+            label="Book Your Session"
+          />
+        </div>
         <p class="mt-6 text-text-muted">
           Not sure yet?
-          <NuxtLink to="/blog" class="text-royal-gold hover:underline">
+          <NuxtLink to="/blog" class="text-royal-gold hover:underline transition-colors duration-200">
             Read my blog posts about PCT and dance &rarr;
           </NuxtLink>
         </p>
@@ -244,6 +256,6 @@ useSeoMeta({
     </section>
 
     <!-- Testimonials -->
-    <DisciplineTestimonials :testimonials="testimonials || []" />
+    <DisciplineTestimonials :testimonials="testimonials || []" class="hover:shadow-sm transition-shadow duration-300" />
   </div>
 </template>
