@@ -63,6 +63,19 @@ export default defineType({
       type: 'url',
     }),
     defineField({
+      name: 'coachPhoto',
+      title: 'Coach Photo',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt text',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
       name: 'defaultOgImage',
       title: 'Default OG Image',
       type: 'image',

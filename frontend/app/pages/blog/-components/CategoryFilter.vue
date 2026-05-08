@@ -1,12 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
   categories: Array<{ _id: string; title: string; slug: string }>
-  modelValue: string
 }>()
 
-const emit = defineEmits<{
-  'update:modelValue': [value: string]
-}>()
+const model = defineModel<string>()
 
 function pillPt(isActive: boolean) {
   return {
@@ -14,7 +11,7 @@ function pillPt(isActive: boolean) {
       class: [
         'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
         isActive
-          ? 'bg-royal-purple text-white'
+          ? 'bg-royal-purple text-white shadow-md'
           : 'bg-surface-raised text-text-muted hover:bg-surface-overlay hover:text-text-main',
       ],
     },
@@ -24,14 +21,14 @@ function pillPt(isActive: boolean) {
 
 <template>
   <div class="flex flex-wrap gap-2">
-    <Button :pt="pillPt(props.modelValue === '')" @click="emit('update:modelValue', '')">
+    <Button :pt="pillPt(!model)" @click="model = ''">
       All
     </Button>
     <Button
-      v-for="category in categories"
+      v-for="category in props.categories"
       :key="category._id"
-      :pt="pillPt(props.modelValue === category.slug)"
-      @click="emit('update:modelValue', category.slug)"
+      :pt="pillPt(model === category._id)"
+      @click="model = category._id"
     >
       {{ category.title }}
     </Button>

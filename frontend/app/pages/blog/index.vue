@@ -12,7 +12,7 @@ const filteredArticles = computed(() => {
   if (!articles.value) return []
   if (!selectedCategory.value) return articles.value
   return articles.value.filter(
-    (a: any) => a.category?.slug === selectedCategory.value,
+    (a: any) => a.category?._id === selectedCategory.value,
   )
 })
 

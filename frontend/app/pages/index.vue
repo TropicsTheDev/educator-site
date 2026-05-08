@@ -8,6 +8,7 @@ const { data: settings } = useSiteSettings();
 const testimonials = computed(() => data.value?.testimonials || []);
 const recentPosts = computed(() => data.value?.recentPosts || []);
 const coachName = computed(() => settings.value?.coachName || "");
+const coachPhoto = computed(() => settings.value?.coachPhoto || null);
 
 function getBadgeClass(discipline?: string) {
   switch (discipline) {
@@ -70,27 +71,36 @@ useSeoMeta({
             </div>
           </div>
 
-          <!-- Coach photo placeholder -->
+          <!-- Coach photo -->
           <div class="shrink-0 animate-fade-in delay-300">
             <div
-              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-border-theme flex items-center justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
+              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-surface-raised border border-border-theme overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
             >
-              <div class="text-center text-text-faint">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-16 w-16 mx-auto mb-2 opacity-50"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="1"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-                <span class="text-sm">Photo coming soon</span>
+              <SanityImage
+                v-if="coachPhoto?.asset?._ref"
+                :asset-id="coachPhoto.asset._ref"
+                :alt="coachName || 'Coach'"
+                auto="format"
+                class="w-full h-full object-cover"
+              />
+              <div v-else class="w-full h-full flex items-center justify-center">
+                <div class="text-center text-text-faint">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-16 w-16 mx-auto mb-2 opacity-50"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                  <span class="text-sm">Photo coming soon</span>
+                </div>
               </div>
             </div>
           </div>

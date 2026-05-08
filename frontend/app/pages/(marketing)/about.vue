@@ -25,10 +25,11 @@ useSchemaOrg([
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">About</h1>
       </div>
-      <img
-        v-if="aboutData?.heroImage"
-        :src="aboutData.heroImage"
+      <SanityImage
+        v-if="aboutData?.heroImage?.asset?._ref"
+        :asset-id="aboutData.heroImage.asset._ref"
         alt="About"
+        auto="format"
         class="absolute inset-0 w-full h-full object-cover opacity-20"
       />
     </section>

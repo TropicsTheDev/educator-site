@@ -3,7 +3,7 @@ import { groq } from '#imports'
 export const siteSettingsQuery = groq`
   *[_type == "siteSettings"][0] {
     siteTitle, coachName, email, phone, location,
-    socialLinks, calendlyBjjUrl, calendlyKizUrl, defaultOgImage
+    socialLinks, calendlyBjjUrl, calendlyKizUrl, coachPhoto, defaultOgImage
   }
 `
 
