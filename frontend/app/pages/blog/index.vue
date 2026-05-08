@@ -34,29 +34,46 @@ useSeoMeta({
         class="mb-10 justify-center"
       />
 
-      <div
-        v-if="filteredArticles.length"
-        class="grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
-        <BlogCard
-          v-for="article in filteredArticles"
-          :key="article._id"
-          :article="article"
-        />
-      </div>
+      <Transition name="fade" mode="out-in">
+        <div :key="selectedCategory || 'all'">
+          <div
+            v-if="filteredArticles.length"
+            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            <BlogCard
+              v-for="article in filteredArticles"
+              :key="article._id"
+              :article="article"
+            />
+          </div>
 
-      <div v-else class="text-center py-20">
-        <p class="text-text-muted text-lg">
-          No articles found{{ selectedCategory ? ' in this category' : '' }}.
-        </p>
-        <Button
-          v-if="selectedCategory"
-          :pt="{ root: { class: 'mt-4 text-royal-purple font-medium hover:underline' } }"
-          @click="selectedCategory = ''"
-        >
-          View all articles
-        </Button>
-      </div>
+          <div v-else class="text-center py-20">
+            <p class="text-text-muted text-lg">
+              No articles found{{ selectedCategory ? ' in this category' : '' }}.
+            </p>
+            <Button
+              v-if="selectedCategory"
+              :pt="{ root: { class: 'mt-4 text-royal-purple font-medium hover:underline' } }"
+              @click="selectedCategory = ''"
+            >
+              View all articles
+            </Button>
+          </div>
+        </div>
+      </Transition>
     </div>
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+</style>
