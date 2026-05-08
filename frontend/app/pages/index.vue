@@ -81,7 +81,7 @@ useSeoMeta({
                 :asset-id="coachPhoto.asset._ref"
                 :alt="coachName || 'Coach'"
                 auto="format"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover object-top"
               />
               <div v-else class="w-full h-full flex items-center justify-center">
                 <div class="text-center text-text-faint">

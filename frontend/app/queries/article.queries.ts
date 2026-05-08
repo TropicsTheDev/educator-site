@@ -42,7 +42,7 @@ export const articlesByCategoryQuery = groq`
 `
 
 export const categoriesQuery = groq`
-  *[_type == "category"] | order(title asc) {
+  *[_type == "category" && !(_id in path("drafts.**"))] | order(title asc) {
     _id, title, "slug": slug.current, description
   }
 `
